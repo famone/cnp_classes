@@ -1,5 +1,6 @@
 <template>
-	<section id="coursepage">
+	<div>
+		<section id="coursepage">
 
 
 		<div class="bgfon" :style="{'background-image': 'url(' + course(id).img + ')'}">
@@ -21,6 +22,14 @@
 			</div>
 		</div>
 	</section>
+
+	<iframe v-if="payment" :src="payment" width="100%" height="100%" style="border: none;height: 100%;position: fixed;z-index: 200;top: 0;left: 0;" align="left">
+ 	</iframe>
+ 	<div class="mycross" v-if="payment" @click="clearFrame()">✕</div>
+
+
+
+	</div>
 	
 </template>
 
@@ -36,7 +45,10 @@ import {mapGetters, mapActions} from 'vuex'
 			this.id = this.$route.params.id
 		},
 		computed: {
-			...mapGetters({course: 'courses/getSingleCourse', user: 'login/getUser'})
+			...mapGetters({
+				course: 'courses/getSingleCourse', 
+				user: 'login/getUser', 
+				payment: 'courses/getPayment'})
 		},
 		methods: {
 			...mapActions({
@@ -46,10 +58,13 @@ import {mapGetters, mapActions} from 'vuex'
 
 				let form = {
 					user_id: this.user.id,
-					course_id: id
+					course_id: id,
+					price: this.course(id).price
 				}
 
-				// console.log(form)
+				console.log(form)
+
+				// return
 		
 
 				this.BUY_COURSE(form).then(() => {
@@ -57,6 +72,9 @@ import {mapGetters, mapActions} from 'vuex'
 		        this.$router.replace("/lk");
 		      });
 				
+			},
+			clearFrame(){
+				this.$store.dispatch('courses/CLEAR_FRAME')
 			}
 		}
 	}
@@ -100,5 +118,21 @@ import {mapGetters, mapActions} from 'vuex'
     bottom: -1px;
     background: linear-gradient(180deg,rgba(17,17,17,0),#111);
     z-index: 1;
+}
+.mycross{
+	position: fixed;
+    top: 8px;
+    right: 19px;
+    color: #fff;
+    font-weight: 400;
+    font-size: 38px;
+    z-index: 300;
+    cursor: pointer;
+}
+iframe #wrapper{
+	background-color: transparent!important;
+}
+iframe a.close.init {
+   display: none;
 }
 </style>
