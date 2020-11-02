@@ -2,7 +2,7 @@
 	<section id="mainslider">
 		<swiper ref="mySwiper" :options="swiperOptions">
 		    <swiper-slide v-for="item in courses">
-		    	<div class="slider-banner" :style="{'background-image': 'url(' + item.img_blur + ')'}">
+		    	<div class="slider-banner" :style="{'background-image': 'url(' + item.img + ')'}">
 		    		<div class="banner-content">
 		    			<h3>{{item.name}}</h3>
 		    			<p class="white-txt" v-html="item.description.substr(0, 131) + '...' "></p>

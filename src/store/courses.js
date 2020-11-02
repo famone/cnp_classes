@@ -5,18 +5,26 @@ const courses = {
 	namespaced: true,
 	state: {
 		courses: '',
-		payment: ''
+		payment: '',
+		boughts: '',
+		boughtsIds: []
   	},
 	mutations: {
 		SET_COURSES(state, courses){
 			state.courses = courses
-			console.log(courses)
 		},
 		SET_PAYMENT(state, payload){
 			state.payment = payload
 		},
 		CLEAR_FRAME(state){
 			state.payment = ''
+		},
+		SET_BOUGHTS(state, payload){
+			state.boughts = payload
+			payload.forEach(item =>{
+				state.boughtsIds.push(item.id)
+			})
+			
 		}
 	},
 	actions: {
@@ -39,6 +47,15 @@ const courses = {
 
 	       	}
        },
+       async GET_BOUGHTS({commit}, payload){
+       		try{
+	       		const {data} = await axios.get('https://nikitapugachev.com/wp-json/np/v1/get/courses?user_id=' + payload)
+	       		return commit('SET_BOUGHTS', data)
+	       	}
+	       	catch(err){
+	       		console.log(err)
+	       	}
+       },
        CLEAR_FRAME({commit}){
        	commit('CLEAR_FRAME')
        }
@@ -52,6 +69,9 @@ const courses = {
   		},
   		getPayment(state){
   			return state.payment
+  		},
+  		getPokupki(state){
+  			return state.boughts
   		}
 	}
 }

@@ -14,7 +14,10 @@
 					<h2>{{course(id).name}}</h2>
 				</div>
 				<div class="col-lg-3">
-					<button class="main-btn w-100" @click="buyCourse(id)">Купить за {{course(id).price}} ₽</button>
+					<!-- <p>{{boughtsIds}}</p> -->
+					<button v-if="boughtsIds.includes(course(id).id)"
+					class="main-btn w-100">Перейти к просмотру</button>
+					<button class="main-btn w-100" @click="buyCourse(course(id))" v-else>Купить за {{course(id).price}} ₽</button>
 				</div>
 				<div class="col-lg-9">
 					<p class=" hidden-xs white-txt fsz-16" v-html="course(id).description"></p>
@@ -22,10 +25,8 @@
 			</div>
 		</div>
 	</section>
-
-	<iframe v-if="payment" :src="payment" width="100%" height="100%" style="border: none;height: 100%;position: fixed;z-index: 200;top: 0;left: 0;" align="left">
- 	</iframe>
- 	<div class="mycross" v-if="payment" @click="clearFrame()">✕</div>
+	
+ 	
 
 
 
@@ -34,7 +35,7 @@
 </template>
 
 <script>
-import {mapGetters, mapActions} from 'vuex'
+import {mapGetters, mapActions, mapState} from 'vuex'
 	export default{
 		data(){
 			return{
@@ -48,33 +49,55 @@ import {mapGetters, mapActions} from 'vuex'
 			...mapGetters({
 				course: 'courses/getSingleCourse', 
 				user: 'login/getUser', 
-				payment: 'courses/getPayment'})
+				payment: 'courses/getPayment'}),
+			...mapState('courses', ['boughtsIds'])
 		},
 		methods: {
 			...mapActions({
 			      BUY_COURSE: "courses/BUY_COURSE",
 			 }),
-			buyCourse(id){
+			buyCourse(param){
 
-				let form = {
-					user_id: this.user.id,
-					course_id: id,
-					price: this.course(id).price
-				}
 
-				console.log(form)
+				console.log(param)
 
-				// return
-		
 
-				this.BUY_COURSE(form).then(() => {
-					return
-		        this.$router.replace("/lk");
-		      });
+
+
+
+				var widget = new cp.CloudPayments();
 				
-			},
-			clearFrame(){
-				this.$store.dispatch('courses/CLEAR_FRAME')
+					widget.pay('auth', 
+							{ 
+							publicId: 'pk_1ca6aec798da797a3092eea9157f7', 
+							description: 'Покупка курса: «' + param.name + '»' , 
+							amount: parseInt(param.price), 
+							currency: 'RUB', 
+							accountId: this.user.user_email, 
+							skin: "mini", 
+							data: {
+							myProp: 'myProp value'
+						}
+					},
+				{
+							onSuccess: function (options) { 
+								let form = {
+									user_id: this.user.id,
+									course_id: id
+								}
+
+								this.BUY_COURSE(form).then(() => {
+							        this.$router.replace("/lk");
+							    });
+							},
+							onFail: function (reason, options) { 
+							},
+							onComplete: function (paymentResult, options) {
+							}
+						}
+					)
+				
+
 			}
 		}
 	}
@@ -89,7 +112,6 @@ import {mapGetters, mapActions} from 'vuex'
 	top: 0;
 	left: 0;
 	z-index: 0;
-	/*background-image: url(https://nikitapugachev.com/wp-content/themes/np/assets/img/zagl_big.jpg);*/
 	background-position: center;
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -119,20 +141,9 @@ import {mapGetters, mapActions} from 'vuex'
     background: linear-gradient(180deg,rgba(17,17,17,0),#111);
     z-index: 1;
 }
-.mycross{
-	position: fixed;
-    top: 8px;
-    right: 19px;
-    color: #fff;
-    font-weight: 400;
-    font-size: 38px;
-    z-index: 300;
-    cursor: pointer;
+
+iframe{
+	backdrop-filter: blur(5px)!important;
 }
-iframe #wrapper{
-	background-color: transparent!important;
-}
-iframe a.close.init {
-   display: none;
-}
+
 </style>
