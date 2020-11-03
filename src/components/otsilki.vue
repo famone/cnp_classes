@@ -12,11 +12,12 @@
 				</div>
 
 			<div class="row devider">	
-				<div @click="goToLink(flash.ID)"  v-for="flash in flashbacks.linkCourse" class="col-lg-3 course-box">
-			 		<!-- <div class="course-img" :style="{'background-image': 'url(' + course.img_blur + ')'}"></div>  -->
-					<h4>{{flash.post_title}}</h4>
-				<p class="grey-txt" v-html="flash.post_content.substr(0, 131) + '...' "></p> 
-				</div>
+				<router-link tag="div" :to=" '/courses/' + flash.id " v-for="flash in flashbacks.linkCourse" class="col-lg-3 course-box">
+					
+			 		<div class="course-img" :style="{'background-image': 'url(' + flash.picture + ')'}"></div>
+					<h4>{{flash.name}}</h4>
+				<!-- <p class="grey-txt" v-html="flash.post_content.substr(0, 131) + '...' "></p>  -->
+				</router-link>
 			</div>
 				
 			

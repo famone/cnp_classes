@@ -2,6 +2,7 @@
 	<div>
 		<!-- <preloader :class="{acPre : coursesNew === '' }" /> -->
 		<Mainslider :courses="courses" v-if="courses !== '' " />
+		
 		<Courses />
 		<Faq />
 	</div>
