@@ -70,6 +70,61 @@ font-weight: 700;
 
 
 
+
+
+	.header__logo{
+		margin-right: 50px;
+	}
+	.head-link{
+		font-size: 14px;
+		font-weight: 400;
+		color: #fff;
+		opacity: .5;
+		margin-right: 30px;
+		transition: all .3s ease;
+	}
+	.head-link:hover{
+		opacity: 1;
+		color: #fff;
+	}
+	.head-link:focus{
+		color: #fff;
+	}
+	.router-link-exact-active{
+		opacity: 1;
+	}
+	.avatar{
+		height: 35px;
+		width: 35px;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		font-size: 16px;
+		color: #fff;
+		text-transform: uppercase;
+		background: #2E97E6;
+		border-radius: 40px;
+		cursor: pointer;
+		border: none;
+		margin-left: 15px;
+	}
+	.servers{
+		border:none;
+		background-color: transparent;
+		color: #fff;
+		opacity: .7;
+		font-size: 14px;
+		transition: all .3s ease;
+		margin: 0 15px;
+	}
+	.servers img{
+		margin-right: 10px;
+	}
+	.servers:hover{
+		opacity: 1;
+	}
+
+
 /*main*/
 
 
@@ -347,23 +402,23 @@ animation-duration: 1s;
 
 /* Remove outline on the forms and links */ 
 :active, :hover, :focus { 
-outline: 0; 
-outline-offset: 0; 
+outline: 0!important; 
+outline-offset: 0!important; 
 }
 
 button:active, button:hover, button:focus { 
-outline: 0; 
-outline-offset: 0; 
+outline: 0!important; 
+outline-offset: 0!important; 
 }
 
 
 a{
-	text-decoration: none;
+	text-decoration: none!important;
 }
 a:hover{
-	text-decoration: none;
+	text-decoration: none!important;
 }
 a:focus{
-	text-decoration: none;
+	text-decoration: none!important;
 }
 

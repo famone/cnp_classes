@@ -3,9 +3,14 @@
 	:class="{transp: this.$route.path.includes('/courses/')}">
 		<div class="container-fluid">
             <div class="shapka">
-            	<router-link to="/" tag="a" class="header__logo wow">
-	            	<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
-	            </router-link>
+            	<div class="log-row">
+            		<router-link to="/" tag="a" class="header__logo">
+	            		<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
+	            	</router-link>
+	            	<router-link tag="a" to="/lk" class="head-link">Мои уроки</router-link>
+	            	<router-link tag="a" to="/123" class="head-link">Мои курсы</router-link>
+            	</div>
+            	
 
 	            <div class="log-row" v-if="!user">
 	            	<router-link to="/enter" tag="button" class="shapka-btn">
@@ -13,14 +18,12 @@
 	            	</router-link>
 	            </div>
 	            <div class="log-row" v-else>
-	            	<p class="white-txt hidden-xs">
-	            		{{user.user_email}}
-	            	</p>
-	            	<router-link to="/lk" tag="button" class="kabinet">
-	            		<span class="mdi mdi-account-outline"></span>
-	            		Мои уроки
-	            	</router-link>
-	            	<button class="shapka-btn logout"@click="logout">Выйти</button>
+	            	<button class="servers"><img src="../assets/img/servers.svg" alt="">Сервисы</button>
+	            	<button class="avatar">
+	            		{{user.user_nicename[0]}}
+	            	</button>
+	            	
+	            	<!-- <button class="shapka-btn logout"@click="logout">Выйти</button> -->
 	            </div>
 	            
             </div>
