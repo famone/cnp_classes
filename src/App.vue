@@ -2,7 +2,10 @@
     <div id="app">
 
 
-      <Header />
+      <Header @activateDrop="activateDrop" />
+
+      <dropdown :class="{dropAc: lkMenu}"  @activateDrop="activateDrop" @deActivateDrop="deActivateDrop" />
+
 <!--       <transition name="slide" mode="out-in"> -->
       	<router-view></router-view>
 <!--       </transition>	 -->
@@ -19,9 +22,23 @@ import Header from './components/Header.vue'
 import Footer from './components/Footer.vue'
 import preloader from './components/preloader.vue'
 import {mapState} from 'vuex'
+import dropdown from './components/dropdown.vue'
 
 export default{
-	components: {Header, Footer},
+	components: {Header, Footer, dropdown},
+	data(){
+		return{
+			lkMenu: false
+		}
+	},
+	methods:{
+		activateDrop(){
+			this.lkMenu = !this.lkMenu
+		},
+		deActivateDrop(){
+			this.lkMenu = false
+		}
+	}
 }
 </script>
 

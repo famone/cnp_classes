@@ -32,6 +32,8 @@ font-weight: 700;
 
 .myheader{
 	background-color: #1A1A1A;
+	position: relative;
+	z-index: 100;
 }
 .transp{
 	background-color: transparent!important;
@@ -46,6 +48,8 @@ font-weight: 700;
 	display: flex;
 	justify-content: space-between;
 	align-items: center;
+	position: relative;
+	z-index: 5;
 }
 .log-row{
 	display: flex;
@@ -66,9 +70,17 @@ font-weight: 700;
     font-weight: 600;
     cursor: pointer;
     color: #fff;
+    transition: all .3s ease;
 }
-
-
+.logout{
+	background-color: #262626;
+	margin: 0;
+	width: 100%;
+	margin-bottom: 10px;
+}
+.logout:hover{
+	background-color: #2E97E6;
+}
 
 
 
@@ -76,8 +88,8 @@ font-weight: 700;
 		margin-right: 50px;
 	}
 	.head-link{
-		font-size: 14px;
-		font-weight: 400;
+		font-size: 16px;
+		font-weight: 600;
 		color: #fff;
 		opacity: .5;
 		margin-right: 30px;
@@ -113,14 +125,31 @@ font-weight: 700;
 		background-color: transparent;
 		color: #fff;
 		opacity: .7;
-		font-size: 14px;
+		font-size: 16px;
 		transition: all .3s ease;
 		margin: 0 15px;
+		font-weight: 600;
 	}
 	.servers img{
 		margin-right: 10px;
 	}
 	.servers:hover{
+		opacity: 1;
+	}
+	.dropdown{
+		position: absolute;
+		right: 15px;
+		top: 0%;
+		width: 190px;
+		padding:10px;
+		background-color: #1A1A1A;
+		border-radius: 0 0 5px 5px;
+		transition: all .3s ease;
+		z-index: 20;
+		opacity: 0;
+	}
+	.dropAc{
+		top: 57px;
 		opacity: 1;
 	}
 
@@ -149,6 +178,10 @@ h3{
 
 
 /*courses*/
+
+#otsilki{
+	padding:60px 0;
+}
 
 #courses{
 	padding-bottom: 40px;
@@ -264,6 +297,12 @@ h2{
 	align-items: flex-end;
 }
 
+
+.small-grey{
+	color: #808080;
+	font-size: 14px;
+}
+
 /*footer*/
 
 
@@ -328,7 +367,17 @@ animation-duration: 1s;
 	height: calc(100vh - 122px);
 	padding: 50px 0;
 }
-
+#typical{
+	padding:50px 0;
+	min-height: calc(100vh - 123px);
+}
+.benefit__item-descr{
+	font-size: 16px;
+	line-height: 24px;
+	color: #808080;
+	font-weight: 400;
+	margin-top: 20px;
+}
 
 
 
@@ -385,6 +434,10 @@ animation-duration: 1s;
 	padding: 0 20px 30px 0;
 	align-items: flex-start;
 	}
+	#login{
+		height: inherit;
+		padding:60px 0;
+	}
 }
 @media (max-width: 390px) {
 	
@@ -420,5 +473,25 @@ a:hover{
 }
 a:focus{
 	text-decoration: none!important;
+}
+
+
+
+
+.Password__strength-meter{
+	margin: 0px auto 20px!important;
+	background: #1b1b1b!important;
+}
+.Password__strength-meter:after, .Password__strength-meter:before{
+	border-color: #121212!important;
+}
+
+
+input[type="text"]{
+	font-size: 16px!important;
+}
+
+input[type="password"]{
+	font-size: 16px!important;
 }
 

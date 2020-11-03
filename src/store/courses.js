@@ -23,14 +23,19 @@ const courses = {
 			state.boughts = payload
 			payload.forEach(item =>{
 				state.boughtsIds.push(item.id)
-			})
-			
+			})	
+		},
+		CLEAR_BOUGHTS(state){
+			state.boughts = ''
+			state.boughtsIds = ''
 		}
+
 	},
 	actions: {
        async LOAD_COURSES({commit}){
 	       	try{
 	       		const {data} = await axios.get('https://nikitapugachev.com/wp-json/np/v1/get/courses')
+	       		console.log(data)
 	       		return commit('SET_COURSES', data)
 	       	}
 	       	catch(err){
@@ -57,7 +62,10 @@ const courses = {
 	       	}
        },
        CLEAR_FRAME({commit}){
-       	commit('CLEAR_FRAME')
+       		commit('CLEAR_FRAME')
+       },
+       CLEAR_BOUGHTS({commit}){
+       		commit('CLEAR_BOUGHTS')
        }
 	},
 	getters: {

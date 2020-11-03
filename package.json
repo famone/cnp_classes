@@ -17,12 +17,14 @@
     "vue-awesome-swiper": "^4.1.1",
     "vue-cookies": "^1.7.0",
     "vue-nouislider": "^1.0.1",
+    "vue-password-strength-meter": "^1.7.2",
     "vue-router": "^3.3.4",
     "vue-the-mask": "^0.11.1",
     "vue-yandex-maps": "^0.10.8",
     "vuelidate": "^0.7.5",
     "vuetify": "^2.3.14",
-    "vuex": "^3.4.0"
+    "vuex": "^3.4.0",
+    "zxcvbn": "^4.4.2"
   },
   "browserslist": [
     "> 1%",

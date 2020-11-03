@@ -27,6 +27,7 @@
 	</section>
 	
  	
+	<otsilki :flashbacks="course(id)" v-if="course(id).linkCourse" />
 
 
 
@@ -35,8 +36,10 @@
 </template>
 
 <script>
+import otsilki from '../components/otsilki.vue'
 import {mapGetters, mapActions, mapState} from 'vuex'
 	export default{
+		components: {otsilki},
 		data(){
 			return{
 				id: ''

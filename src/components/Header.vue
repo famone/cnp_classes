@@ -7,8 +7,10 @@
             		<router-link to="/" tag="a" class="header__logo">
 	            		<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
 	            	</router-link>
-	            	<router-link tag="a" to="/lk" class="head-link">Мои уроки</router-link>
-	            	<router-link tag="a" to="/123" class="head-link">Мои курсы</router-link>
+	            	<div class="navs hidden-xs" v-if="user">
+	            		<router-link tag="a" to="/lk" class="head-link">Мои уроки</router-link>
+	            		<router-link tag="a" to="/123" class="head-link">Мои курсы</router-link>
+	            	</div>
             	</div>
             	
 
@@ -19,13 +21,10 @@
 	            </div>
 	            <div class="log-row" v-else>
 	            	<button class="servers"><img src="../assets/img/servers.svg" alt="">Сервисы</button>
-	            	<button class="avatar">
+	            	<div class="avatar" @click="activateDrop($emit)">
 	            		{{user.user_nicename[0]}}
-	            	</button>
-	            	
-	            	<!-- <button class="shapka-btn logout"@click="logout">Выйти</button> -->
-	            </div>
-	            
+	            	</div>
+	            </div>   
             </div>
         </div>
      </div>
@@ -40,14 +39,18 @@ import {mapGetters, mapActions} from 'vuex'
 			...mapGetters({ user: "login/getUser"}),
 		},
 		methods: {
-    		...mapActions({
-      			singOut: "login/SIGN_OUT",
-    		}),
+    		// ...mapActions({
+      // 			singOut: "login/SIGN_OUT",
+    		// }),
 
-	    	logout() {
-	      		this.singOut().then(() => {
-	        		this.$router.replace("/enter");
-	      		});
+	    	// logout() {
+	     //  		this.singOut().then(() => {
+	     //    		this.$router.replace("/enter");
+	     //  		});
+	    	// },
+
+	    	activateDrop(){
+	    		this.$emit('activateDrop')
 	    	}
   		},
 	}
@@ -58,9 +61,6 @@ import {mapGetters, mapActions} from 'vuex'
 	p.white-txt{
 		margin-bottom: 0;
 		font-size: 16px;
-	}
-	.logout{
-		background-color: #262626;
 	}
 	.kabinet{
 		margin: 0 5px;

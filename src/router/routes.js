@@ -6,6 +6,11 @@ import Login from '../pages/Login.vue'
 import Lk from '../pages/Lk.vue'
 import LkItem from '../pages/LkItem.vue'
 import Courses from '../pages/Courses.vue'
+import Signup from '../pages/Signup.vue'
+import Recovery from '../pages/Recovery.vue'
+import Politika from '../pages/Politika.vue'
+import Soglashenie from '../pages/Soglashenie.vue'
+import Platezhi from '../pages/Platezhi.vue'
 
 const routes = [
 		{
@@ -23,6 +28,26 @@ const routes = [
 		{
 			path: '/enter',
 			component: Login
+		},
+		{
+			path: '/recovery',
+			component: Recovery
+		},
+		{
+			path: '/signup',
+			component: Signup
+		},
+		{
+			path: '/politika',
+			component: Politika,
+		},
+		{
+			path: '/soglashenie',
+			component: Soglashenie,
+		},
+		{
+			path: '/platezhi',
+			component: Platezhi,
 		},
 		{
 			path: '/lk',

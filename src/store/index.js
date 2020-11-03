@@ -5,10 +5,14 @@ Vue.use(Vuex)
 
 import courses from './courses'
 import login from './login'
+import signup from './signup'
+import forgot from './forgot'
 
 export default new Vuex.Store({
 	modules: {
 		courses,
-		login
+		login,
+		signup,
+		forgot
 	}
 }) 
