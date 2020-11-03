@@ -1,83 +1,79 @@
 <template>
-    <div id="app">
+  <div id="app">
+    <Header @activateDrop="activateDrop" />
 
+    <dropdown
+      :class="{ dropAc: lkMenu }"
+      @activateDrop="activateDrop"
+      @deActivateDrop="deActivateDrop"
+    />
 
-      <Header @activateDrop="activateDrop" />
+    <!--       <transition name="slide" mode="out-in"> -->
+    <router-view></router-view>
+    <!--       </transition>	 -->
 
-      <dropdown :class="{dropAc: lkMenu}"  @activateDrop="activateDrop" @deActivateDrop="deActivateDrop" />
-
-<!--       <transition name="slide" mode="out-in"> -->
-      	<router-view></router-view>
-<!--       </transition>	 -->
-
-      <Footer />
-
-      
-    </div>
+    <Footer />
+  </div>
 </template>
 
 <script>
-import './assets/css/style.css'
-import Header from './components/Header.vue'
-import Footer from './components/Footer.vue'
-import preloader from './components/preloader.vue'
-import {mapState} from 'vuex'
-import dropdown from './components/dropdown.vue'
+import "./assets/css/style.css";
+import Header from "./components/Header.vue";
+import Footer from "./components/Footer.vue";
+import preloader from "./components/preloader.vue";
+import { mapState } from "vuex";
+import dropdown from "./components/dropdown.vue";
 
-export default{
-	components: {Header, Footer, dropdown},
-	data(){
-		return{
-			lkMenu: false
-		}
-	},
-	methods:{
-		activateDrop(){
-			this.lkMenu = !this.lkMenu
-		},
-		deActivateDrop(){
-			this.lkMenu = false
-		}
-	}
-}
+export default {
+  components: { Header, Footer, dropdown },
+  data() {
+    return {
+      lkMenu: false,
+    };
+  },
+  methods: {
+    activateDrop() {
+      this.lkMenu = !this.lkMenu;
+    },
+    deActivateDrop() {
+      this.lkMenu = false;
+    },
+  },
+};
 </script>
 
 <style>
-
-
-.slide-leave-active{
-	transition: opacity .3s ease;
-	opacity: 0;
-	animation: slide-out .3s  ease-out forwards;
+.slide-leave-active {
+  transition: opacity 0.3s ease;
+  opacity: 0;
+  animation: slide-out 0.3s ease-out forwards;
 }
-.slide-leave{
-	opacity: 1;
-	transform: translateX(0px);
+.slide-leave {
+  opacity: 1;
+  transform: translateX(0px);
 }
-.slide-enter-active{
-	animation: slide-in .3s  ease-out forwards;
-	opacity: 1;
+.slide-enter-active {
+  animation: slide-in 0.3s ease-out forwards;
+  opacity: 1;
 }
 
-
-
-@keyframes slide-out{
-	0%{
-		transform: translateY(0);
-	}
-	100%{
-		transform: translateY(50px);
-	}
+@keyframes slide-out {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(50px);
+  }
 }
-@keyframes slide-in{
-	0%{
-		transform: translateY(50px);
-		opacity: 0;
-	}
-	100%{
-		transform: translateY(0px);
-		opacity: 1;
-	}
+@keyframes slide-in {
+  0% {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(0px);
+    opacity: 1;
+  }
 }
 </style>
 
