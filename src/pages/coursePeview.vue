@@ -1,48 +1,38 @@
 <template>
   <div>
     <section id="coursepage">
-      <div
-        class="bgfon"
-        :style="{ 'background-image': 'url(' + course(id).img + ')' }"
-      >
-        <iframe
-          data-v-ddfea3ac=""
+      <div class="bgfon":style="{ 'background-image': 'url(' + course(id).img + ')' }">
+        <!-- <iframe
           src="https://player.vimeo.com/video/460741059?loop=true&amp;byline=false&amp;controls=false&amp;fun=false&amp;muted=true&amp;portrait=false&amp;title=false&amp;autoplay=true&amp;transparent=true&amp;gesture=media"
           allowtransparency
           allow="autoplay"
           class="bg-video__player"
-        ></iframe>
+        ></iframe> -->
       </div>
 
+   
+
       <div class="container-fluid">
-        <div class="anatation">
-          <div class="col-lg-12">
-            <h2>{{ course(id).name }}</h2>
+          <div class="anatation">
+            <div class="col-lg-12">
+              <h2>{{ course(id).name }}</h2>
+            </div>
+
+            <div class="col-lg-3">
+               <button class="main-btn w-100" v-if="purchaseId.includes(course(id).id)">
+                Перейти к просмотру
+              </button>
+              <button class="main-btn w-100" @click="buyCourse(course(id))" v-else>
+                Купить за {{ course(id).price }} ₽
+              </button>
+            </div>
+            <div class="col-lg-9">
+              <p class="hidden-xs white-txt fsz-16" v-html="course(id).description"></p>
+            </div>
           </div>
-          <div class="col-lg-3">
-            <!-- <p>{{boughtsIds}}</p> -->
-            <button
-              v-if="boughtsIds.includes(course(id).id)"
-              class="main-btn w-100"
-            >
-              Перейти к просмотру
-            </button>
-            <button
-              class="main-btn w-100"
-              @click="buyCourse(course(id))"
-              v-else
-            >
-              Купить за {{ course(id).price }} ₽
-            </button>
-          </div>
-          <div class="col-lg-9">
-            <p
-              class="hidden-xs white-txt fsz-16"
-              v-html="course(id).description"
-            ></p>
-          </div>
-        </div>
       </div>
+
+
     </section>
 
     <otsilki :flashbacks="course(id)" v-if="course(id).linkCourse" />
@@ -61,9 +51,8 @@ export default {
     ...mapGetters({
       course: "courses/getSingleCourse",
       user: "login/getUser",
-      payment: "courses/getPayment",
+      purchaseId: "login/getPurchaseId"
     }),
-    ...mapState("courses", ["boughtsIds"]),
   },
   methods: {
     ...mapActions({
@@ -147,6 +136,6 @@ export default {
 }
 
 iframe {
-  backdrop-filter: blur(5px) !important;
+  backdrop-filter: blur(5px)!important;
 }
 </style>

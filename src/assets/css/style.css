@@ -287,7 +287,7 @@ h2{
 
 
 #coursepage{
-	height: calc(100vh - 66px);
+	height: 100vh;
 	position: relative;
 	padding:50px 0;
 }
@@ -295,6 +295,15 @@ h2{
 	display: flex;
 	height: 100%;
 	align-items: flex-end;
+}
+
+
+.center-btn{
+	position: absolute;
+	top: calc(50% - 25px);
+	left: calc(50% - 125px);
+	width: 250px;
+	z-index: 10;
 }
 
 

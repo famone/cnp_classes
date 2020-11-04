@@ -1,9 +1,10 @@
 <template>
-  <div id="app">
-    <Header @activateDrop="activateDrop" />
+  <div id="app" @click="clickOutside($event)">
+    <Header @activateDrop="activateDrop" @click.stop="" />
 
     <dropdown
       :class="{ dropAc: lkMenu }"
+      @click.stop=""
       @activateDrop="activateDrop"
       @deActivateDrop="deActivateDrop"
     />
@@ -38,7 +39,19 @@ export default {
     deActivateDrop() {
       this.lkMenu = false;
     },
-  },
+    clickOutside(e){
+      let drpdwn = document.querySelector('.dropdown'),
+          ava = document.querySelector('.avatar')
+
+      if(this.lkMenu){
+        if(e.target == drpdwn || e.target == ava){
+          console.log(e.target)
+        }else{
+          this.lkMenu = false;
+        }
+      }
+    }
+  }
 };
 </script>
 

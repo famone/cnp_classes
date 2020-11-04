@@ -1,6 +1,7 @@
 <template>
-	<div class="dropdown" @mouseleave="deActivateDrop($emit)">
-	            	<button class="shapka-btn logout" @click="activateDrop($emit)" disabled>
+	<!-- @mouseleave="deActivateDrop($emit)" -->
+	<div class="dropdown" >
+	            	<button class="shapka-btn logout"  >
 	            		<span class="mdi mdi-account-outline"></span> Личный кабинет
 	            	</button>
 
@@ -26,7 +27,6 @@ import {mapActions} from 'vuex'
 			logout() {
 	      		this.singOut().then(() => {
 	        		this.$router.replace("/enter");
-	        		this.$store.dispatch('courses/CLEAR_BOUGHTS')
 	      		});
 	    	},
 		}

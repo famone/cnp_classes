@@ -39,16 +39,6 @@ import {mapGetters, mapActions} from 'vuex'
 			...mapGetters({ user: "login/getUser"}),
 		},
 		methods: {
-    		// ...mapActions({
-      // 			singOut: "login/SIGN_OUT",
-    		// }),
-
-	    	// logout() {
-	     //  		this.singOut().then(() => {
-	     //    		this.$router.replace("/enter");
-	     //  		});
-	    	// },
-
 	    	activateDrop(){
 	    		this.$emit('activateDrop')
 	    	}
