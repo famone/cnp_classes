@@ -9,7 +9,7 @@
 		<div class="col-lg-12 text-center">
 			<img src="../assets/img/logotype.svg" class="logo">
 			<h3>Авторизация</h3>
-			<form @submit.prevent="login()" class="text-center">
+			<form @submit.prevent="login" class="text-center">
 				<div class="form-box">
 					<input type="text" :class="{errorInp : $v.name.$dirty && !$v.name.required}"
 					 v-model="name" placeholder="Логин">
@@ -25,7 +25,6 @@
 					</button>
 				<p class="small-grey">У тебя еще нет аккаунта?</p>
 				<router-link tag="a" to="/signup" class="blue-text sz-14">Зарегистрируйся</router-link>
-
 			</form>
 		</div>
 	</section>
@@ -60,7 +59,8 @@ export default{
 	methods: {
 		...mapActions({
 	      AUTH_REQUEST: "login/AUTH_REQUEST",
-	    }),
+		}),
+		
 		login(){
 			if(this.$v.$invalid) {
 					this.$v.$touch();

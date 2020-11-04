@@ -6,14 +6,9 @@ import store from './store'
 import VueAwesomeSwiper from 'vue-awesome-swiper'
 import VueTheMask from 'vue-the-mask'
 import Vuelidate from 'vuelidate'
+
 import 'vuetify/dist/vuetify.min.css'
-
-
 import 'swiper/css/swiper.css'
-
-
-import 'swiper/css/swiper.css'
-
 
 const user = JSON.parse(localStorage.getItem("user"))
 store.dispatch("login/VALIDATE", user);

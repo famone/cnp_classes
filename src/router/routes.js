@@ -13,83 +13,82 @@ import Soglashenie from '../pages/Soglashenie.vue'
 import Platezhi from '../pages/Platezhi.vue'
 
 const routes = [
-		{
-			path: '/',
-			component: Home
-		},
-		{
-			path: '/courses/:id',
-			component: coursePeview
-		},
-		{
-			path: '/courses',
-			component: Courses
-		},
-		{
-			path: '/enter',
-			component: Login
-		},
-		{
-			path: '/recovery',
-			component: Recovery
-		},
-		{
-			path: '/signup',
-			component: Signup
-		},
-		{
-			path: '/politika',
-			component: Politika,
-		},
-		{
-			path: '/soglashenie',
-			component: Soglashenie,
-		},
-		{
-			path: '/platezhi',
-			component: Platezhi,
-		},
-		{
-			path: '/lk',
-			component: Lk,
-			beforeEnter: (to, from, next) => {
-				
+	{
+		path: '/',
+		component: Home
+	},
+	{
+		path: '/courses/:id',
+		component: coursePeview,
+		props: true
+	},
+	{
+		path: '/courses',
+		component: Courses
+	},
+	{
+		path: '/enter',
+		component: Login
+	},
+	{
+		path: '/recovery',
+		component: Recovery
+	},
+	{
+		path: '/signup',
+		component: Signup
+	},
+	{
+		path: '/politika',
+		component: Politika,
+	},
+	{
+		path: '/soglashenie',
+		component: Soglashenie,
+	},
+	{
+		path: '/platezhi',
+		component: Platezhi,
+	},
+	{
+		path: '/lk',
+		component: Lk,
+		beforeEnter: (to, from, next) => {
 
-					if(store.getters["login/getAuthenticated"]){
-		        		
-		        			next()
-		   
-			        }else {
-				        if (to.path != "/enter") {
-				            next("/enter")
-				        }
-				        else {
-				            next()
-				        }
-				    }
+			if (store.getters["login/getAuthenticated"]) {
+
+				next()
+
+			} else {
+				if (to.path != "/enter") {
+					next("/enter")
 				}
-		},
-		{
-			path: '/lk/:id',
-			component: LkItem,
-			beforeEnter: (to, from, next) => {
-				
-
-					if(store.getters["login/getAuthenticated"]){
-		        		
-		        			next()
-		   
-			        }else {
-				        if (to.path != "/enter") {
-				            next("/enter")
-				        }
-				        else {
-				            next()
-				        }
-				    }
+				else {
+					next()
 				}
-		},
+			}
+		}
+	},
+	{
+		path: '/lk/:id',
+		component: LkItem,
+		beforeEnter: (to, from, next) => {
 
-	]
+			if (store.getters["login/getAuthenticated"]) {
+
+				next()
+
+			} else {
+				if (to.path != "/enter") {
+					next("/enter")
+				}
+				else {
+					next()
+				}
+			}
+		}
+	},
+
+]
 
 export default routes;
