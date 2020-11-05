@@ -29,9 +29,12 @@ const login = {
         },
         SET_BOUGHTS(state, purchase){
             state.purchase = purchase
+            state.purchaseId = []
             purchase.forEach(item =>{
                 state.purchaseId.push(item.id)
             })
+            console.log(state.purchase)
+             console.log(state.purchaseId)
         },
         CLEAR_BOUGHTS(state){
             state.purchase = ''
@@ -88,11 +91,13 @@ const login = {
             try{
                 const {data} = await axios.get('https://nikitapugachev.com/wp-json/np/v1/get/courses?user_id=' + payload)
                     return commit('SET_BOUGHTS', data)
-               
             }
             catch(err){
                 console.log(err)
             }
+       },
+       CLEAR_BOUGHTS({commit}){
+            commit("CLEAR_BOUGHTS")
        }
 	},
 	getters: {

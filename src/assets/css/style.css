@@ -444,7 +444,10 @@ animation-duration: 1s;
 	}
 }
 @media (max-width: 786px) {
-
+	#mylessons{
+		height: inherit;
+		padding:50px 0;
+	}
 }
 @media (max-width: 767px) {
  

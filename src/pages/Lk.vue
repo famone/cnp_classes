@@ -20,6 +20,10 @@ export default{
 	components: {courseBox},
 	computed: {
 		...mapGetters({ user: "login/getUser", purchase: "login/getPurchase"}),
+	},
+	created(){
+		const user = JSON.parse(localStorage.getItem("user"))
+		this.$store.dispatch("login/VALIDATE", user);
 	}
 }
 </script>
