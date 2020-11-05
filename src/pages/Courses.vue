@@ -3,7 +3,7 @@
 		<div class="container-fluid">
 			<div class="row devider">
 				<div class="col-lg-12">
-					<h2>Все курсы</h2>
+					<h2>Food film</h2>
 				</div>
 			</div>
 			<div class="row devider">

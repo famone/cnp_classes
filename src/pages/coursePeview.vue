@@ -1,13 +1,18 @@
 <template>
   <div>
+
+   <transition name="slide" mode="out-in">
+    <buyAlert v-if="logAlert" />
+  </transition>
+
     <section id="coursepage">
       <div class="bgfon":style="{ 'background-image': 'url(' + course(id).img + ')' }">
-        <!-- <iframe
+        <iframe
           src="https://player.vimeo.com/video/460741059?loop=true&amp;byline=false&amp;controls=false&amp;fun=false&amp;muted=true&amp;portrait=false&amp;title=false&amp;autoplay=true&amp;transparent=true&amp;gesture=media"
           allowtransparency
           allow="autoplay"
           class="bg-video__player"
-        ></iframe> -->
+        ></iframe>
       </div>
 
    
@@ -34,19 +39,24 @@
 
 
     </section>
-
     <otsilki :flashbacks="course(id)" v-if="course(id).linkCourse" />
   </div>
 </template>
 
 <script>
+import buyAlert from '../components/buyAlert.vue'
 import otsilki from "../components/otsilki.vue";
 import { mapGetters, mapActions, mapState } from "vuex";
+
 export default {
-  components: { otsilki },
+  components: { otsilki, buyAlert },
 
   props: ["id"],
-
+  data(){
+    return{
+      logAlert: false
+    }
+  },
   computed: {
     ...mapGetters({
       course: "courses/getSingleCourse",
@@ -60,6 +70,11 @@ export default {
     }),
     buyCourse(param) {
       console.log(param);
+
+      if(!this.user){
+        this.logAlert = true
+        return
+      }
 
       var widget = new cp.CloudPayments();
 
@@ -138,4 +153,5 @@ export default {
 iframe {
   backdrop-filter: blur(5px)!important;
 }
+
 </style>

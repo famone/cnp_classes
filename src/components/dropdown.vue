@@ -1,9 +1,9 @@
 <template>
 	<!-- @mouseleave="deActivateDrop($emit)" -->
 	<div class="dropdown" >
-	            	<button class="shapka-btn logout"  >
+	            	<router-link tag="button" to="/lk" class="shapka-btn logout"  >
 	            		<span class="mdi mdi-account-outline"></span> Личный кабинет
-	            	</button>
+	            	</router-link>
 
 	            	<button class="shapka-btn logout" @click="activateDrop($emit), logout()">
 	            		<span class="mdi mdi-logout"></span> Выйти
