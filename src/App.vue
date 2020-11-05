@@ -14,6 +14,11 @@
     <!--       </transition>	 -->
 
     <Footer />
+
+
+                  <transition name="slide" mode="out-in">
+                      <cookieAlert v-if="cAlert" @hideCookie="hideCookie" />
+                  </transition>
   </div>
 </template>
 
@@ -24,15 +29,20 @@ import Footer from "./components/Footer.vue";
 import preloader from "./components/preloader.vue";
 import { mapState } from "vuex";
 import dropdown from "./components/dropdown.vue";
+import cookieAlert from './components/cookieAlert.vue'
 
 export default {
-  components: { Header, Footer, dropdown },
+  components: { Header, Footer, dropdown, cookieAlert },
   data() {
     return {
       lkMenu: false,
+      cAlert: false
     };
   },
   methods: {
+    hideCookie(){
+        this.cAlert = false
+    },
     activateDrop() {
       this.lkMenu = !this.lkMenu;
     },
@@ -51,6 +61,9 @@ export default {
         }
       }
     }
+  },
+  mounted() {
+    this.cAlert = true
   }
 };
 </script>

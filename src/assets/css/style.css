@@ -390,6 +390,26 @@ animation-duration: 1s;
 
 
 
+.cookie-alert{
+	position: fixed;
+	width: 96%;
+	bottom: 2%;	
+	left: 2%;
+	background-color: #1A1A1A;
+	padding:20px;
+	border-radius: 10px;
+	z-index: 15;
+	box-shadow: 0 3px 5px -1px rgba(0,0,0,.2), 0 6px 10px 0 rgba(0,0,0,.14), 0 1px 18px 0 rgba(0,0,0,.12);
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	}
+.cookie-alert .white-txt{
+	margin-bottom: 0;
+	width: 85%;
+}
+
+
 /*ADAPTIIIIIIIIIV*/
 
 
@@ -446,6 +466,17 @@ animation-duration: 1s;
 	#login{
 		height: inherit;
 		padding:60px 0;
+	}
+	.cookie-alert{
+		flex-wrap: wrap;
+	}
+	.cookie-alert .white-txt{
+		width: 100%;
+		margin-bottom: 10px;
+	}
+	.cookie-alert button{
+		margin:0;
+		width: 100%;
 	}
 }
 @media (max-width: 390px) {
