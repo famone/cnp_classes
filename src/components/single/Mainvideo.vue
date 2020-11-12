@@ -38,7 +38,7 @@
 	    background: linear-gradient(180deg, rgba(17, 17, 17, 0), #111);
 	    z-index: 0;
 	}
-	.mainVideon .lazer{
+	.lazer{
 		position: relative!important;
 		z-index: 5!important;
 	}

@@ -15,9 +15,10 @@
 	export default{
 		mounted(){
 
-			// if (window.width <= 479) 
-
-			const scene2 = this.$scrollmagic.scene({
+			if (window.width <= 479) {
+				return
+			}else{
+				const scene2 = this.$scrollmagic.scene({
 				triggerElement: '#firstScreen',
 			    triggerHook: 0,
 			    duration: '100%'
@@ -31,6 +32,7 @@
 		    })
 
 		    this.$scrollmagic.addScene(scene2)
+			}
 
 		}
 	}
