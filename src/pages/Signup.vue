@@ -41,9 +41,9 @@
 
 <script>
 import Password from 'vue-password-strength-meter'
-import enter from '../components/enter.vue'
+import enter from '../components/ui/enter.vue'
 import {mapActions, mapState, mapGetters} from 'vuex'
-import loading from '../components/loading.vue'
+import loading from '../components/ui/loading.vue'
 import { required, email, minLength } from "vuelidate/lib/validators";
 
 export default{

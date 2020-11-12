@@ -2,7 +2,7 @@
 	<section id="mylessons">
 		<div class="container-fluid">
 			<div class="col-lg-12">
-				<h2>Мои уроки</h2>
+				<h2>Мои покупки</h2>
 				 <p class="grey-txt" v-if="purchase === '' ">У вас нет еще ни одной покупки</p>
 				<courseBox v-for="course in purchase" :course="course"/> 
 			</div>
@@ -14,7 +14,7 @@
 
 <script>
 import {mapGetters, mapActions} from 'vuex'
-import courseBox from '../components/courseBox.vue'
+import courseBox from '../components/ui/courseBox.vue'
 
 export default{
 	components: {courseBox},

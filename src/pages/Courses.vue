@@ -1,26 +1,33 @@
 <template>
-	<section id="mylessons">
-		<div class="container-fluid">
-			<div class="row devider">
-				<div class="col-lg-12">
-					<h2>Food film</h2>
-				</div>
-			</div>
-			<div class="row devider">
-				<courseBox v-for="course in courses" :course="course" />
-			</div>
-		</div>
-	</section>
+	<div>
+
+		<Inner :innerSec="innerSec" />
+		
+		<Courses />
+
+		 <Faq />
+
+	</div>	
 </template>
 
 <script>
-import courseBox from '../components/courseBox.vue'
 import {mapGetters, mapState} from 'vuex'
+import Inner from '../components/Inner.vue'
+import Faq from "../components/Faq.vue";
+import Courses from '../components/Courses.vue'
 
 export default{
-		components: {courseBox},
+		components: {Inner, Faq, Courses},
 		computed: {
 			...mapGetters({ courses: "courses/getCourses"})
-		}
+		},
+		data(){
+			return{
+				innerSec: {
+					title: 'Короткие уроки',
+					descr: 'Маленькие курсы позволяют в сжатые сроки освоить новый навык и <br>сразу же начать применять полученные знания на практике. Они отлично <br>подойдут как новичкам, так и тем, кто хочет продолжать <br>развиваться в новом направлении'
+				}
+			}
+	}
 	}
 </script>

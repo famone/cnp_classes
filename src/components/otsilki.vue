@@ -33,7 +33,7 @@
 
 
 <script>
-import courseBox from "../components/courseBox.vue";
+import courseBox from "../components/ui/courseBox.vue";
 
 export default {
   props: {

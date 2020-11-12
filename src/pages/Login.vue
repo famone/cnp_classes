@@ -31,8 +31,8 @@
 </template>
 
 <script>
-import loading from '../components/loading.vue'
-import snackbar from '../components/snackbar.vue'
+import loading from '../components/ui/loading.vue'
+import snackbar from '../components/ui/snackbar.vue'
 import {mapActions, mapState} from 'vuex'
 import { required } from "vuelidate/lib/validators";
 

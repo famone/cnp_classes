@@ -9,9 +9,9 @@
       @deActivateDrop="deActivateDrop"
     />
 
-    <!--       <transition name="slide" mode="out-in"> -->
-    <router-view></router-view>
-    <!--       </transition>	 -->
+    <transition name="slide" mode="out-in">
+        <router-view></router-view>
+    </transition>	
 
     <Footer />
 
@@ -24,12 +24,12 @@
 
 <script>
 import "./assets/css/style.css";
-import Header from "./components/Header.vue";
-import Footer from "./components/Footer.vue";
-import preloader from "./components/preloader.vue";
+import Header from "./components/ui/Header.vue";
+import Footer from "./components/ui/Footer.vue";
+import preloader from "./components/ui/preloader.vue";
 import { mapState } from "vuex";
-import dropdown from "./components/dropdown.vue";
-import cookieAlert from './components/cookieAlert.vue'
+import dropdown from "./components/ui/dropdown.vue";
+import cookieAlert from './components/ui/cookieAlert.vue'
 
 export default {
   components: { Header, Footer, dropdown, cookieAlert },

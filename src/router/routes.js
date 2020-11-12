@@ -11,6 +11,7 @@ import Recovery from '../pages/Recovery.vue'
 import Politika from '../pages/Politika.vue'
 import Soglashenie from '../pages/Soglashenie.vue'
 import Platezhi from '../pages/Platezhi.vue'
+import Lessons from '../pages/Lessons.vue'
 
 const routes = [
 	{
@@ -25,6 +26,10 @@ const routes = [
 	{
 		path: '/courses',
 		component: Courses
+	},
+	{
+		path: '/lessons',
+		component: Lessons
 	},
 	{
 		path: '/enter',

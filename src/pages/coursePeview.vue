@@ -15,7 +15,11 @@
         ></iframe>
       </div>
 
-   
+      <div class="go-to-watch" v-if="purchaseId.includes(course(id).id)">
+        <button class="main-btn">
+                Перейти к просмотру
+        </button>
+      </div>
 
       <div class="container-fluid">
           <div class="anatation">
@@ -23,28 +27,51 @@
               <h2>{{ course(id).name }}</h2>
             </div>
 
-            <div class="col-lg-3">
-               <button class="main-btn w-100" v-if="purchaseId.includes(course(id).id)">
-                Перейти к просмотру
-              </button>
-              <button class="main-btn w-100" @click="buyCourse(course(id))" v-else>
+            <div class="col-lg-3" v-if="!purchaseId.includes(course(id).id)">
+              <button class="main-btn w-100" @click="buyCourse(course(id))">
                 Купить за {{ course(id).price }} ₽
               </button>
             </div>
-            <div class="col-lg-9">
+
+            <div class="col-lg-9" v-if="!purchaseId.includes(course(id).id)">
               <p class="hidden-xs white-txt fsz-16" v-html="course(id).description"></p>
             </div>
+            <div class="col-lg-12" v-else>
+              <p class="hidden-xs white-txt fsz-16" v-html="course(id).description"></p>
+            </div>
+
+
           </div>
       </div>
 
 
     </section>
+
+
+<!-- mobile descr -->
+    <div class="hidden-lg hidden-sm hidden-md hidden-xl">
+      <div class="container-fluid">
+        <div class="col-lg-12">
+           <p class="white-txt fsz-16" v-html="course(id).description"></p>
+        </div>
+      </div>
+    </div>
+<!-- mobile descr -->   
+
+<!-- 
+<section id="player">
+  <iframe :src=" course(id).video +  '?title=0&amp;byline=0&amp;portrait=0' " frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" class="vimeo__player"></iframe>
+</section>
+ -->
+
+
+
     <otsilki :flashbacks="course(id)" v-if="course(id).linkCourse" />
   </div>
 </template>
 
 <script>
-import buyAlert from '../components/buyAlert.vue'
+import buyAlert from '../components/ui/buyAlert.vue'
 import otsilki from "../components/otsilki.vue";
 import { mapGetters, mapActions, mapState } from "vuex";
 
@@ -148,10 +175,6 @@ export default {
   bottom: -1px;
   background: linear-gradient(180deg, rgba(17, 17, 17, 0), #111);
   z-index: 1;
-}
-
-iframe {
-  backdrop-filter: blur(5px)!important;
 }
 
 </style>

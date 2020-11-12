@@ -7,9 +7,9 @@
             		<router-link to="/" tag="a" class="header__logo">
 	            		<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg">
 	            	</router-link>
-	            	<div class="navs hidden-xs" v-if="user">
-	            		<router-link tag="a" to="/lk" class="head-link">Мои уроки</router-link>
-	            		<router-link tag="a" to="/123" class="head-link">Мои курсы</router-link>
+	            	<div class="navs hidden-xs ">
+	            		<router-link tag="a" to="/courses" class="head-link">Уроки</router-link>
+	            		<router-link tag="a" to="/lessons" class="head-link">Курсы</router-link>
 	            	</div>
             	</div>
             	
@@ -20,7 +20,7 @@
 	            	</router-link>
 	            </div>
 	            <div class="log-row" v-else>
-	            	<button class="servers"><img src="../assets/img/servers.svg" alt="">Сервисы</button>
+	            	<button class="servers"><img src="../../assets/img/servers.svg" alt="">Сервисы</button>
 	            	<div class="avatar" @click="activateDrop($emit)">
 	            		{{user.user_nicename[0]}}
 	            	</div>

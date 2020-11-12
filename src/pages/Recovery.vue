@@ -29,7 +29,7 @@
 <script>
 // import snackbar from '../components/snackbar.vue'
 import {mapActions, mapState} from 'vuex'
-import loading from '../components/loading.vue'
+import loading from '../components/ui/loading.vue'
 import { required } from "vuelidate/lib/validators";
 
 export default{
