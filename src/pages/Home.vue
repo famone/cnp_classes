@@ -26,6 +26,9 @@
     <Lessons />
     <Process />
     <Chat />
+    <More2 />
+    <hr>
+    <Questions />
 
   </div>
 </template>
@@ -44,9 +47,12 @@ import Lessons from '../components/Lessons.vue';
 import Process from '../components/single/Process.vue';
 import Chat from '../components/single/Chat.vue';
 import Mainvideo from '../components/single/Mainvideo.vue'
+import More2 from '../components/single/More2.vue'
+import Questions from '../components/single/Questions.vue'
 
 export default {
-  components: { Courses, preloader, Fadetitles, FirstScreen, Misstakes, Shortwh, Lessons, Process, Chat, Mainvideo },
+  components: { Courses, preloader, Fadetitles, FirstScreen, 
+    Misstakes, Shortwh, Lessons, Process, Chat, Mainvideo, More2, Questions },
   computed: {
     ...mapGetters({ courses: "courses/getCourses" }),
   },

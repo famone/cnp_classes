@@ -18,7 +18,7 @@
 </template>
 
 
-<style>
+<style scoped>
 	.mainVideo{
 		position: relative;
 		height: 100vh;
@@ -26,17 +26,18 @@
 		justify-content: center;
 		align-items: flex-end;
 		padding-bottom: 60px;
+		overflow:hidden;
 		z-index: 0;
 	}
-	.mainVideo:after {
+	.mainVideo:before {
 	    display: block;
 	    content: "";
 	    position: absolute;
 	    width: 100%;
 	    height: 340px;
-	    bottom: -10px;
+	    bottom: 0px;
 	    background: linear-gradient(180deg, rgba(17, 17, 17, 0), #111);
-	    z-index: 0;
+	    z-index: 1;
 	}
 	.lazer{
 		position: relative!important;

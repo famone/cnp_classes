@@ -1,5 +1,6 @@
 <template>
   <div id="app" @click="clickOutside($event)">
+
     <Header @activateDrop="activateDrop" @click.stop="" />
 
     <dropdown

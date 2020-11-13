@@ -15,23 +15,23 @@
 	export default{
 		mounted(){
 
-			if (window.width <= 479) {
+			if (document.documentElement.clientWidth <= 672) {
 				return
 			}else{
 				const scene2 = this.$scrollmagic.scene({
 				triggerElement: '#firstScreen',
 			    triggerHook: 0,
 			    duration: '100%'
-			})
+				})
 
-			.setTween('.floatdiv', { 
-		      css: { 
-		        transform: 'translateY(300px) scale(.8)',
-		        opacity: '0'
-		      }
-		    })
+				.setTween('.floatdiv', { 
+			      css: { 
+			        transform: 'translateY(300px) scale(.8)',
+			        opacity: '0'
+			      }
+			    })
 
-		    this.$scrollmagic.addScene(scene2)
+			    this.$scrollmagic.addScene(scene2)
 			}
 
 		}

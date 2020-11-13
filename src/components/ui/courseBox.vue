@@ -1,5 +1,5 @@
 <template>
-	<router-link tag="div" :to="'/courses/' + course.id " class="col-lg-3 course-box">
+	<router-link tag="div" :to="'/courses/' + course.id " class="col-lg-3 col-md-4 course-box">
 		<!-- <div class="new">🔥Новинка</div> -->
 		<div class="course-img" :style="{'background-image': 'url(' + course.img_blur + ')'}"></div>
 		<h4>{{course.name}}</h4>

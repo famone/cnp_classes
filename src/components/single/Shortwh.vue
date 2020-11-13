@@ -30,21 +30,21 @@
 
 		    // 
 
-
-		    const scene2 = this.$scrollmagic.scene({
+		   if (document.documentElement.clientWidth >= 672) {
+		    	const scene2 = this.$scrollmagic.scene({
 				triggerElement: '#short_white',
 			    triggerHook: 1 ,
 			    duration: '50%'
 			})
 			.setTween('.outZoom1', { 
 		      css: { 
-		        transform: 'scale(1)',
+		        transform: 'scale(1) translateY(0px)',
 		        opacity: '1'
 		      }, 
 		      delay: 0.5
 		    })
 		    this.$scrollmagic.addScene(scene2)
-
+		    }
 		}
 	}
 </script>
@@ -59,7 +59,7 @@
 		padding: 150px 0 70px 0;
 	}
 	.outZoom1{
-		transform: scale(4);
+		transform: scale(4) translateY(10px);
 		opacity: 0;
 	}
 </style>

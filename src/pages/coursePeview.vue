@@ -1,9 +1,7 @@
 <template>
   <div>
 
-   <transition name="slide" mode="out-in">
-    <buyAlert v-if="logAlert" />
-  </transition>
+    <Buypop :class="{buyPopAc: logAlert}" @hidePop="hidePop" />
 
     <section id="coursepage">
       <div class="bgfon":style="{ 'background-image': 'url(' + course(id).img + ')' }">
@@ -71,12 +69,12 @@
 </template>
 
 <script>
-import buyAlert from '../components/ui/buyAlert.vue'
 import otsilki from "../components/otsilki.vue";
 import { mapGetters, mapActions, mapState } from "vuex";
+import Buypop from '../components/ui/Buypop.vue';
 
 export default {
-  components: { otsilki, buyAlert },
+  components: { otsilki, Buypop },
 
   props: ["id"],
   data(){
@@ -92,6 +90,9 @@ export default {
     }),
   },
   methods: {
+    hidePop(){
+        this.logAlert = false
+    },
     ...mapActions({
       BUY_COURSE: "courses/BUY_COURSE",
     }),
