@@ -1,7 +1,7 @@
 <template>
 	<section id="questions">
 		<div class="container">
-			<h1>Остались вопросы <br>напиши нам</h1>
+			<h1 class="super-big">Остались вопросы <br>напиши нам</h1>
 			<div class="social-boxes wow fadeInUp">
 				<a target="_blank" href="http://t.me/nikitapugachev" class="social-icon">
 					<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/telegram.svg" alt="social"> 

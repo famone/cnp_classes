@@ -2,9 +2,9 @@
 	<section id="firstScreen">
 		<div class="container text-center wow fadeIn floatdiv">
 			<img src="../../assets/img/logotype.svg" alt="">
-			<h1>Онлайн площадка по <br>обучению видео</h1>
+			<h1 class="super-big">Больше, чем школа <br>видеомейкинга</h1>
 			<p class="white-txt big-white">
-				Никакой скучной теории, сами снимаем, сами рассказываем...
+				Практика в чистом виде
 			</p>
 		</div>
 	</section>

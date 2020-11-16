@@ -1,5 +1,5 @@
 <template>
-	<div class="mainVideo">
+	<div class="mainVideo wow fadeIn" data-wow-duration="2s">
         <iframe
           src="https://player.vimeo.com/video/478079229?loop=true&amp;byline=false&amp;controls=false&amp;fun=false&amp;muted=true&amp;portrait=false&amp;title=false&amp;autoplay=true&amp;transparent=true&amp;gesture=media"
           allowtransparency

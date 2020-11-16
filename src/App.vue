@@ -17,9 +17,9 @@
     <Footer />
 
 
-                  <transition name="slide" mode="out-in">
+<!--                   <transition name="slide" mode="out-in">
                       <cookieAlert v-if="cAlert" @hideCookie="hideCookie" />
-                  </transition>
+                  </transition> -->
   </div>
 </template>
 

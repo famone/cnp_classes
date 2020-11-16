@@ -8,7 +8,7 @@
 				<div class="form-box">
 					<input type="text" placeholder="Почта">
 				</div>
-					<button class="blue-btn">
+					<button class="blue-btn" @click.prevent="goPay(chosenCourse)">
 						<!-- <loading />  -->
 						<span >Зарегистрироватся</span>
 					</button>
@@ -26,10 +26,19 @@
 import loading from '../../components/ui/loading.vue'
 
 export default{
+	props: {
+		chosenCourse: {
+			required: true,
+			type: Object
+		}
+	},
 	components: {loading},
 	methods: {
 		hidePop(){
 			this.$emit('hidePop')
+		},
+		goPay(param){
+			console.log(param.price)
 		}
 	}
 }

@@ -8,7 +8,7 @@
 				<router-link tag="button" to="/courses" class="show-more">Перенять опыт</router-link>
 			</div>
 			<div class="col-lg-7 wow fadeInRight">
-				<img src="../../assets/img/uiux_nick.png" class="uiux_nick">
+				<img src="https://nikitapugachev.com/wp-content/uploads/2020/11/uiux_nick.png" class="uiux_nick">
 			</div>
 		</div>
 	</section>

@@ -264,6 +264,9 @@ h2{
 	cursor: pointer;
 	position: relative;
 }
+.course-box h4{
+	margin-bottom: 0;
+}
 .new{
 	position: absolute;
 	top: 20px;
@@ -474,6 +477,10 @@ animation-duration: 1s;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 30px;
+	padding-right: 20px;
+    padding-left: 20px;
+    margin-right: auto;
+    margin-left: auto;
 }
 .filter-btn{
 	font-size: 16px;
@@ -658,13 +665,23 @@ animation-duration: 1s;
 }
 /*pop*/
 
+
+
+.super-big{
+	font-size: 84px;
+	line-height: 75px;
+}
+
+
+
+
 /*magicscroll*/
 
 
 
 #fadetitles{
 		position: relative;
-		height: 650vh;
+		height: 550vh;
 	}
 	.fadebox1, .fadebox2, .fadebox3, .fadebox4, .fadebox5, .fadebox6{
 		width: 100%;
@@ -735,11 +752,14 @@ animation-duration: 1s;
 		text-align: center;
 	}
 	.filter{
-		flex-wrap: wrap;
-		justify-content: flex-start;
+		overflow-x: auto;
+    	-webkit-overflow-scrolling: touch;
+    	justify-content: left;
+    	padding-bottom: 10px;
 	}
 	.filter-btn{
 		margin: 5px;
+		white-space: nowrap;
 	}
 	#inner{
 		padding: 120px 0;
@@ -780,8 +800,15 @@ animation-duration: 1s;
 		opacity: 1!important;
 		transform: scale(1) translateY(0)!important;
 	}
+	#process{
+		padding:100px 0;
+	}
+	#more2{
+		padding: 100px 0;
+	}
 }
 @media (max-width: 512px) {
+
 	.croxx{
 		font-size: 25px;
 		height: 25px;
@@ -822,6 +849,11 @@ animation-duration: 1s;
 		font-weight: 600;
 	    font-size: 36px;
 	    line-height: 40px;
+	}
+	.super-big{
+		font-weight: 600;
+    font-size: 36px;
+    line-height: 40px;
 	}
 	#questions h1{
 		text-align: center;

@@ -1,7 +1,7 @@
 <template>
 	<section id="short_white">
 		<div class="container-fluid text-center outZoom1">
-			<h1 style="color: #262626;">Обучающие курсы</h1>
+			<h1 class="super-big" style="color: #262626;">Обучающие курсы</h1>
 			<p class="black-txt">
 				Курсы позволяют в сжатые сроки освоить новый навык и сразу же <br> начать применять полученные знания на практике.
 			</p>

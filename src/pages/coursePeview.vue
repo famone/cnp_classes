@@ -1,7 +1,7 @@
 <template>
   <div>
 
-    <Buypop :class="{buyPopAc: logAlert}" @hidePop="hidePop" />
+    <Buypop :class="{buyPopAc: logAlert}" @hidePop="hidePop" :chosenCourse="chosenCourse"/>
 
     <section id="coursepage">
       <div class="bgfon":style="{ 'background-image': 'url(' + course(id).img + ')' }">
@@ -79,7 +79,8 @@ export default {
   props: ["id"],
   data(){
     return{
-      logAlert: false
+      logAlert: false,
+      chosenCourse: {}
     }
   },
   computed: {
@@ -97,10 +98,11 @@ export default {
       BUY_COURSE: "courses/BUY_COURSE",
     }),
     buyCourse(param) {
-      console.log(param);
-
+    
       if(!this.user){
         this.logAlert = true
+        this.chosenCourse = param
+        // console.log(param);
         return
       }
 
