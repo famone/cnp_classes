@@ -1,6 +1,6 @@
 <template>
 	<section id="misstakes">
-		<div class="container">
+		<div class="container w-900">
 			<div class="col-lg-12 wow fadeIn text-center">
 				<h1>Учись на чужих ошибках...</h1>
 				<p class="white-txt big-white">

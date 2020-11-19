@@ -8,7 +8,7 @@
 
 
 		<div class="col-lg-12 text-center">
-			<svg data-v-850e14e4="" width="133" height="70" viewBox="0 0 133 70" fill="none" xmlns="http://www.w3.org/2000/svg" class="icon"><path data-v-850e14e4="" fill-rule="evenodd" clip-rule="evenodd" d="M79.5382 35.0015H114.026V17.5007H87.2678L68.6075 0H132.687V52.5022H90.469V70L34.4911 17.5007H18.6603V52.5022H45.425L64.0822 70H0V0H42.2176L79.5382 35.0015Z" fill="#EDEDED"></path></svg>
+			<img src="../assets/img/logotype.svg" class="logo">
 			<h3>Регистрация</h3>
 			<form @submit.prevent="login" class="text-center">
 				<div class="form-box">
@@ -128,7 +128,7 @@ form{
 	width: 335px;
 	margin: 0 auto;
 }
-.logo{
+img.logo{
 	height: 36px;
     margin-bottom: 20px;
 }

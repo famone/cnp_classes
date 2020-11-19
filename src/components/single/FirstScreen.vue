@@ -1,7 +1,7 @@
 <template>
 	<section id="firstScreen">
 		<div class="container text-center wow fadeIn floatdiv">
-			<img src="../../assets/img/logotype.svg" alt="">
+			<img src="../../assets/img/logotype.svg" class="h-50">
 			<h1 class="super-big">Больше, чем школа <br>видеомейкинга</h1>
 			<p class="white-txt big-white">
 				Практика в чистом виде

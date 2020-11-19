@@ -19,10 +19,6 @@
 				filters: [
 					{title: 'Все категории',active: true},
 					{title: 'Фуд-видео',active: false},
-					{title: 'Персональный бренд',active: false},
-					{title: 'Препродашн',active: false},
-					{title: 'Съемка',active: false},
-					{title: 'Постпродакшн',active: false},
 				]
 			}
 		},

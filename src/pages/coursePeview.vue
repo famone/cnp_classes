@@ -195,9 +195,9 @@ export default {
   content: "";
   position: absolute;
   width: 100%;
-  height: 260px;
+  height: 400px;
   bottom: -1px;
-  background: linear-gradient(180deg, rgba(17, 17, 17, 0), #111);
+ background: linear-gradient(180deg, rgba(17, 17, 17, 0) 0%, #111111 100%);
   z-index: 1;
 }
 #player{

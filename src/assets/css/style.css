@@ -35,6 +35,13 @@ font-weight: 700;
 	background-color: #1A1A1A;
 	position: relative;
 	z-index: 100;
+	padding: 0 5px;
+}
+.fixedH{
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 .transp{
 	background-color: transparent!important;
@@ -83,6 +90,12 @@ font-weight: 700;
 	background-color: #2E97E6;
 }
 
+.blue-text{
+	color:#2E97E5;
+}
+.blue-text:hover{
+	color:#2E97E5;
+}
 
 
 	.header__logo{
@@ -182,6 +195,88 @@ h3{
 	font-size: 84px;
 	line-height: 75px;
 }
+
+
+
+/*mobile menu*/
+
+
+.burger-btn	{
+	height: 18px;
+	width: 28px;
+	cursor: pointer;
+	position: relative;
+}
+.burger-btn span{
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 28px;
+	height: 2px;
+	background-color: #fff;
+	transition: all .3s ease;
+}
+.burger-btn span:last-child{
+	top: 16px;
+}
+
+.acBurger span:first-child{
+	transform:rotate(135deg);
+	top: 7px;
+}
+
+.acBurger span:last-child{
+	transform:rotate(-135deg);
+	top: 7px;
+}
+
+
+.mob-menu{
+	z-index: 99;
+	position: fixed;
+	height: calc(100% - 53px);
+	background-color: #111;
+	left: 0;
+	top: -100%;
+	transition: all .3s ease;
+	width: 100%;
+	padding: 30px 20px 0 20px
+}
+.mobMenuAc{
+	top: 53px;
+}
+.mob-menu h3{
+ 	font-size: 24px;
+ 	font-weight: 700;
+ 	line-height: 30px;
+ 	margin-bottom: 20px;
+}
+.mob-menu .head-link{
+	margin-right: 0;
+	margin-bottom: 20px;
+}
+.mob-menu hr{
+	margin: 30px 0;
+}
+.mob-menu .main-btn{
+	width: 100%;
+}
+.mob-menu .logout{
+	padding: 13px 20px;
+	font-size: 16px;
+}
+
+
+
+
+/*mobile menu*/
+
+
+
+
+
+
+
 /*inner*/
 #inner{
 	padding: 150px 0;
@@ -219,7 +314,7 @@ h1{
 	height: 180px;
 	width: 100%;
 	margin-bottom: 15px;
-	border-radius: 10px;
+	border-radius: 5px;
 	background-color: #1A1A1A;
 	background-size: cover;
 	background-repeat: no-repeat;
@@ -302,7 +397,7 @@ h2{
 	border-bottom:none;
 }
 .fsz-16{
-	font-size: 18px;;
+	font-size: 16px;;
 }
 .w-100{
 	width: 100%;
@@ -315,7 +410,7 @@ h2{
 #coursepage{
 	height: 100vh;
 	position: relative;
-	padding:50px 0;
+	padding:30px 0 20px 0;
 }
 #coursepage .container-fluid{
 	display: flex;
@@ -587,7 +682,7 @@ animation-duration: 1s;
 	margin-top: 20px;	
 }
 .less-box h1{
-	max-width: 60%;
+	max-width: 65%;
 	margin-bottom: 10px;
 	margin-top: 0;
 	line-height: 57px;
@@ -690,6 +785,12 @@ animation-duration: 1s;
 	margin: 0 auto;
 }
 
+.w-900{
+	max-width: 900px!important;
+}
+.h-50{
+	height: 50px;
+}
 
 /*magicscroll*/
 
@@ -761,14 +862,27 @@ animation-duration: 1s;
 	opacity: .12!important;
 	background-repeat: no-repeat!important;
 	background-position: center!important;
-	background-size: 80%;
+	background-size: 80%!important;
+	background-color: none!important;
 }
 .fullscreen .play-pause-layer{
-	background-size: 80%;
+	background-size: 80%!important;
 	background-repeat: no-repeat!important;
 	background-position: center!important;
 	opacity: .12;
+	background-color: none!important;
 }
+
+.vcp-layer:after{
+	position: absolute;
+	top: 0;
+	left: 0;
+	height: 100%;
+	width: 100%;
+	background-color: red;
+	z-index: 10000;
+}
+
 
 .fullscreen .play-pause-layer .btn-control{
 	opacity: 0;
@@ -803,15 +917,50 @@ animation-duration: 1s;
 .vcp-layer.play-pause-layer .btn-pause{
 	opacity: 0!important;
 }
+.fullscreen .vcp-layer.play-pause-layer .btn-play{
+	opacity: 0!important;
+}
+.fullscreen .vcp-layer.play-pause-layer .btn-pause{
+	opacity: 0!important;
+}
+
+
+
+.setting-control .vue-core-video-player-control:nth-child(2){
+	display: none;
+}
+.btn-control-panel .current-panel li:nth-child(1){
+	display: none;
+}
+.btn-control-panel .current-panel li:nth-child(2){
+	display: none;
+}
+.btn-control-panel .current-panel li:nth-child(3){
+	display: none;
+}
+.settings-control .btn-control-panel{
+	min-height: 70px!important;
+}
 
 
 /*player styles*/
 
-/*ADAPTIIIIIIIIIV*/
 
+
+
+
+
+/*ADAPTIIIIIIIIIV*/
+@media (max-width: 1356px) {
+	.course-box{
+		height: 340px;
+	}
+}
 
 @media (max-width: 1199px) {
-	
+	.core-sceemer{
+		height: inherit;
+	}
 }
 @media (max-width: 991px) {
 	.footer-box{
@@ -849,17 +998,32 @@ animation-duration: 1s;
 		margin: 5px;
 		white-space: nowrap;
 	}
+	.core-sceemer{
+		height: inherit;
+	}
 }
 @media (max-width: 786px) {
 	#mylessons{
 		height: inherit;
 		padding:50px 0;
 	}
+	.core-sceemer{
+		height: inherit;
+	}
 }
 @media (max-width: 767px) {
- 
+ 	.course-box{
+ 		max-width: 100%!important;
+ 		height: inherit;
+ 	}
+ 	.filter{
+    	justify-content: center;
+	}
 }
 @media (max-width: 672px) {
+	.setting-control .vue-core-video-player-control:nth-child(2){
+		display: inline-block;
+	}
 	.anatation{
 		text-align: center;
 		    width: 100%;
@@ -898,15 +1062,15 @@ animation-duration: 1s;
 		height: 30px;
 	}
 	.less-box h1{
-		font-size: 36px;
-	    line-height: 40px;
+		font-size: 32px;
+	    line-height: 38px;
 	    max-width: 100%;
 	}
 	.less-box .white-txt{
 		max-width: 100%;
 	}
 	.big-white{
-		font-size: 18px;
+		font-size: 14px;
 	    line-height: 22px;
 	}
 	.outZoom1{
@@ -994,6 +1158,13 @@ animation-duration: 1s;
 	}
 	.core-sceemer{
 		height: inherit;
+	}
+	h3{
+		font-size: 18px;
+		line-height: 21px;
+	}
+	.main-logo{
+		height: 33px;
 	}
 }
 @media (max-width: 390px) {

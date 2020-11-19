@@ -23,10 +23,10 @@ import Lessonbox from '../components/ui/Lessonbox.vue'
 			return{
 				lessons: [
 					{
-						date: '15 февраля - 15 марта',
-						title: 'Мобильная видеосъемка на смартфон',
-						miniDescr: 'Хочешь круто снимать на смартфон',
-						img: require('../assets/img/telka.jpg')
+						date: '4 января - 24 января',
+						title: 'Съемка фуд-видео для начинающих',
+						miniDescr: 'Полное онлайн-руководство по подготовке и съемке фуд-видео, от настройки камеры и постановки света до монтажа и цветокоррекции.',
+						img: 'http://nikitapugachev.com/wp-content/uploads/2020/11/fd_bn.jpg'
 					}
 				]
 			}

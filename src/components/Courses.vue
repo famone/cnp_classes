@@ -34,7 +34,7 @@ import FilterBox from '../components/ui/FilterBox.vue'
 		data(){
 			return{
 				filteredParam: 'Все категории',
-				baseVisible: 4,
+				baseVisible: 12,
 				hideMore: false,
 				savedScroll: 0
 			}
@@ -43,7 +43,9 @@ import FilterBox from '../components/ui/FilterBox.vue'
 			...mapGetters({ courses: "courses/getCourses"}),
 			coursesMobile(){
 				if (document.documentElement.clientWidth <= 672 && this.$route.path === '/') {
-					return 3
+					return 4
+				}else if(document.documentElement.clientWidth >= 672 && this.$route.path === '/'){
+					return 8
 				}else{
 					return this.baseVisible
 				}
@@ -68,9 +70,9 @@ import FilterBox from '../components/ui/FilterBox.vue'
 			getFilter(param){
 				this.hideMore = false
 				this.filteredParam = param;
-				this.baseVisible = 4
+				this.baseVisible = 12
 
-				if(this.filteredCourses.length <= 4){
+				if(this.filteredCourses.length <= 8){
 					this.hideMore = true
 				}
 			},

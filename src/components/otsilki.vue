@@ -21,7 +21,7 @@
             :style="{ 'background-image': 'url(' + flash.picture + ')' }"
           ></div>
           <h4>{{ flash.name }}</h4>
-          <!-- <p class="grey-txt" v-html="flash.post_content.substr(0, 131) + '...' "></p>  -->
+          <p class="grey-txt" v-html="flash.description.substr(0, 131) + '...' "></p> 
         </router-link>
       </div>
     </div>

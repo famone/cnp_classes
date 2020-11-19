@@ -6,7 +6,10 @@
 	            	</router-link>
 
 	            	<router-link tag="button" to="/lk" class="shapka-btn logout"  >
-	            		<span class="mdi mdi-laptop-windows"></span> Мои покупки
+	            		<span class="mdi mdi-laptop-windows"></span> Мои уроки
+	            	</router-link>
+	            	<router-link tag="button" to="/lk2" class="shapka-btn logout"  >
+	            		<span class="mdi mdi-book-open-variant"></span> Мои курсы
 	            	</router-link>
 
 	            	<button class="shapka-btn logout" @click="activateDrop($emit), logout()">

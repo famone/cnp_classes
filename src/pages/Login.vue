@@ -91,7 +91,7 @@ h3{
 	margin-bottom: 20px;
 }
 img.logo{
-	height: 50px;
+	height: 36px;
 	margin-bottom: 20px;
 }
 form{

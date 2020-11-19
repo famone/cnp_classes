@@ -4,6 +4,7 @@ import store from '../store'
 import coursePeview from '../pages/coursePeview.vue'
 import Login from '../pages/Login.vue'
 import Lk from '../pages/Lk.vue'
+import Lk2 from '../pages/Lk2.vue'
 import LkItem from '../pages/LkItem.vue'
 import Courses from '../pages/Courses.vue'
 import Signup from '../pages/Signup.vue'
@@ -63,6 +64,25 @@ const routes = [
 	{
 		path: '/lk',
 		component: Lk,
+		beforeEnter: (to, from, next) => {
+
+			if (store.getters["login/getAuthenticated"]) {
+
+				next()
+
+			} else {
+				if (to.path != "/enter") {
+					next("/enter")
+				}
+				else {
+					next()
+				}
+			}
+		}
+	},
+	{
+		path: '/lk2',
+		component: Lk2,
 		beforeEnter: (to, from, next) => {
 
 			if (store.getters["login/getAuthenticated"]) {

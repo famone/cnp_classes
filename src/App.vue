@@ -1,7 +1,7 @@
 <template>
   <div id="app" @click="clickOutside($event)">
 
-    <Header @activateDrop="activateDrop" @click.stop="" />
+    <Header @activateDrop="activateDrop" @click.stop="" @showMobile="goMobile" :mobActive="mobActive" :class="{fixedH: mobActive}" />
 
     <dropdown
       :class="{ dropAc: lkMenu }"
@@ -9,6 +9,8 @@
       @activateDrop="activateDrop"
       @deActivateDrop="deActivateDrop"
     />
+
+    <mobileMenu :mobActive="mobActive"  @closeMen="closeMen"/>
 
     <transition name="slide" mode="out-in">
         <router-view></router-view>
@@ -31,16 +33,24 @@ import preloader from "./components/ui/preloader.vue";
 import { mapState } from "vuex";
 import dropdown from "./components/ui/dropdown.vue";
 import cookieAlert from './components/ui/cookieAlert.vue'
+import mobileMenu from './components/ui/mobileMenu.vue'
 
 export default {
-  components: { Header, Footer, dropdown, cookieAlert },
+  components: { Header, Footer, dropdown, cookieAlert, mobileMenu },
   data() {
     return {
       lkMenu: false,
-      cAlert: false
+      cAlert: false,
+      mobActive: false
     };
   },
   methods: {
+    goMobile(){
+      this.mobActive = !this.mobActive
+    },
+    closeMen(){
+      this.mobActive = false
+    },
     hideCookie(){
         this.cAlert = false
     },

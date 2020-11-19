@@ -28,12 +28,12 @@
 			// 
 			var tweenV = new TimelineMax()
 					.from(".fadebox", 1, { opacity: 0})
-					.to(".fadebox", 1, { opacity: 0, delay: 0.9});
+					.to(".fadebox", 1, { opacity: 0, delay: 1.9});
 
 			 const sceneV = this.$scrollmagic.scene({
 				triggerElement: '.mainVideo',
 			    triggerHook: 0,
-			    duration: "100%",
+			    duration: "180%",
 			}).setTween(tweenV)
 		    this.$scrollmagic.addScene(sceneV) 
 		}
@@ -59,7 +59,7 @@
 	}
 	.mainVideo{
 		position: relative;
-		height: 180vh;
+		height: 250vh;
 		overflow:hidden;
 		z-index: 0;
 	}
