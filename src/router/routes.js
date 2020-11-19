@@ -12,6 +12,7 @@ import Politika from '../pages/Politika.vue'
 import Soglashenie from '../pages/Soglashenie.vue'
 import Platezhi from '../pages/Platezhi.vue'
 import Lessons from '../pages/Lessons.vue'
+import Notfound from '../pages/Notfound.vue'
 
 const routes = [
 	{
@@ -54,6 +55,10 @@ const routes = [
 	{
 		path: '/platezhi',
 		component: Platezhi,
+	},
+	{
+		path: '*',
+		component: Notfound,
 	},
 	{
 		path: '/lk',

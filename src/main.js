@@ -11,6 +11,46 @@ import VueScrollmagic from 'vue-scrollmagic'
 import 'vuetify/dist/vuetify.min.css'
 import 'swiper/css/swiper.css'
 
+
+import VueCoreVideoPlayer from 'vue-core-video-player'
+
+const ru = {
+  "dashboard" : {
+    "btn": {
+       "play": "Пуск",
+      "pause": "Пауза",
+      "fullscreen": "Во весь экран",
+      "exitFullscreen": "Выйти из полноэкранного режима",
+      "mute": "Выкл. звук",
+      "unmute": "Вкл. звук",
+      "back": "Назад",
+      "pip": "Закрепить"
+    },
+    "settings" : {
+      "autoplay": "Автоплей",
+      "loop": "Бесконечно",
+      "speed": "Скорость",
+      "resolution": "Качество"
+    }
+  },
+  "layers": {
+    "error": {
+      "title": "(O_O)?  Ошибка!",
+      "2404": "Видеофайл не найден",
+      "2502": "Media Network Error",
+      "2503": "Video Cannot DECODE",
+      "2504": "Video Cannot Play!"
+    },
+    "loading": {
+      "msg": "Загрузка ..."
+    }
+}}
+
+
+Vue.use(VueCoreVideoPlayer, {lang: ru});
+
+
+
 const user = JSON.parse(localStorage.getItem("user"))
 store.dispatch("login/VALIDATE", user);
 store.dispatch("courses/LOAD_COURSES");

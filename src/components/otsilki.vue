@@ -15,8 +15,7 @@
           v-for="flash in flashbacks.linkCourse"
           :key="flash.id"
           :to="'/courses/' + flash.id"
-          class="col-lg-3 course-box"
-        >
+          class="col-lg-3 course-box">
           <div
             class="course-img"
             :style="{ 'background-image': 'url(' + flash.picture + ')' }"
@@ -43,14 +42,6 @@ export default {
     },
   },
   components: { courseBox },
-  methods: {
-    goToLink(link) {
-      this.$router.push("/").then(() => {
-        this.$router.replace("/courses/" + link);
-      });
 
-      // this.$router.push('/courses/15')
-    },
-  },
 };
 </script>

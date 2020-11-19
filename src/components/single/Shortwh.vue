@@ -5,7 +5,7 @@
 			<p class="black-txt">
 				Курсы позволяют в сжатые сроки освоить новый навык и сразу же <br> начать применять полученные знания на практике.
 			</p>
-			<router-link tag="button" to="/courses" class="trans-btn">Смотреть все курсы</router-link>
+			<router-link tag="button" to="/lessons" class="trans-btn">Смотреть все курсы</router-link>
 		</div>
 	</section>
 </template>
@@ -59,7 +59,7 @@
 		padding: 150px 0 70px 0;
 	}
 	.outZoom1{
-		transform: scale(4) translateY(10px);
+		transform: scale(1.3) translateY(10px);
 		opacity: 0;
 	}
 </style>

@@ -27,12 +27,6 @@ import Lessonbox from '../components/ui/Lessonbox.vue'
 						title: 'Мобильная видеосъемка на смартфон',
 						miniDescr: 'Хочешь круто снимать на смартфон',
 						img: require('../assets/img/telka.jpg')
-					},
-					{
-						date: '15 февраля - 15 марта',
-						title: 'Мобильная видеосъемка на смартфон',
-						miniDescr: 'Хочешь круто снимать на смартфон',
-						img: require('../assets/img/telka.jpg')
 					}
 				]
 			}

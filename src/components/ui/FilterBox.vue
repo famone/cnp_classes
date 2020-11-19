@@ -5,7 +5,7 @@
 		v-for="(fItem, index) in filters"
 		:class="{actFilt: fItem.active}"
 		:key="index"
-		@click="changeFilter(index)"
+		@click="changeFilter(index, $emit)"
 		>{{fItem.title}}</div>
 	</div>
 
@@ -33,7 +33,10 @@
 				})
 
 				this.filters[index].active = true
-			}
+
+				this.$emit('getFilter', this.filters[index].title)
+			}		
 		}
 	}
 </script>
+

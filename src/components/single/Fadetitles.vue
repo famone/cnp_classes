@@ -8,13 +8,13 @@
 			<h1 class="tit3 super-big">Полноценнные <br class="hidden-sm hidden-md hidden-lg">курсы</h1>
 		</div>
 		<div class="fadebox4" id="scene4"> 
-			<h1 class="tit4 super-big">Лучший старт для <br> новичков</h1>
+			<h1 class="tit4 super-big">Лучший старт для<br>новичков</h1>
 		</div>
 		<div class="fadebox5" id="scene5"> 
-			<h1 class="tit5 super-big">Полезно<br class="hidden-sm hidden-md hidden-lg"> для профи</h1>
+			<h1 class="tit5 super-big">Полезно <br class="hidden-sm hidden-md hidden-lg">для профи</h1>
 		</div>
 		<div class="fadebox6" id="scene6"> 
-			<h1 class="tit6 super-big"> Новый контент <br> каждый месяц</h1>
+			<h1 class="tit6 super-big">Новый контент<br>каждый месяц</h1>
 		</div>
 	</div>
 </template>
@@ -35,8 +35,8 @@
 
 
 		   var tween2 = new TimelineMax()
-					.from(".tit2", 1, { transform: 'translateY(300px)' , opacity: 0})
-					.to(".tit2", 1, { transform: 'translateY(-300px)', opacity: 0});
+					.from(".tit2", 1, { transform: 'translateY(50px)' , opacity: 0})
+					.to(".tit2", 1, { transform: 'translateY(-50px)', opacity: 0, delay: 0.7});
 
 			 const scene2 = this.$scrollmagic.scene({
 				triggerElement: '#scene2',
@@ -49,8 +49,8 @@
 		    //
 
 		    var tween3 = new TimelineMax()
-					.from(".tit3", 1, { transform: 'translateY(300px)' , opacity: 0})
-					.to(".tit3", 1, { transform: 'translateY(-300px)', opacity: 0});
+					.from(".tit3", 1, { transform: 'translateY(50px)' , opacity: 0})
+					.to(".tit3", 1, { transform: 'translateY(-50px)', opacity: 0, delay: 0.7});
 
 			 const scene3 = this.$scrollmagic.scene({
 				triggerElement: '#scene3',
@@ -62,8 +62,8 @@
 		     //
 
 		    var tween4 = new TimelineMax()
-					.from(".tit4", 1, { transform: 'translateY(300px)' , opacity: 0})
-					.to(".tit4", 1, { transform: 'translateY(-300px)', opacity: 0});
+					.from(".tit4", 1, { transform: 'translateY(50px)' , opacity: 0})
+					.to(".tit4", 1, { transform: 'translateY(-50px)', opacity: 0, delay: 0.7});
 
 			 const scene4 = this.$scrollmagic.scene({
 				triggerElement: '#scene4',
@@ -75,8 +75,8 @@
 		    //
 
 		    var tween5 = new TimelineMax()
-					.from(".tit5", 1, { transform: 'translateY(300px)' , opacity: 0})
-					.to(".tit5", 1, { transform: 'translateY(-300px)', opacity: 0});
+					.from(".tit5", 1, { transform: 'translateY(50px)' , opacity: 0})
+					.to(".tit5", 1, { transform: 'translateY(-50px)', opacity: 0, delay: 0.7});
 
 			 const scene5 = this.$scrollmagic.scene({
 				triggerElement: '#scene5',
@@ -88,8 +88,8 @@
 		    //
 
 		    var tween6 = new TimelineMax()
-					.from(".tit6", 1, { transform: 'translateY(300px)' , opacity: 0})
-					.to(".tit6", 1, { transform: 'translateY(-300px)', opacity: 0});
+					.from(".tit6", 1, { transform: 'translateY(50px)' , opacity: 0})
+					.to(".tit6", 1, { transform: 'translateY(-50px)', opacity: 0});
 
 			 const scene6 = this.$scrollmagic.scene({
 				triggerElement: '#scene6',

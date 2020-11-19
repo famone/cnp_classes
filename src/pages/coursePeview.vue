@@ -3,18 +3,12 @@
 
     <Buypop :class="{buyPopAc: logAlert}" @hidePop="hidePop" :chosenCourse="chosenCourse"/>
 
-    <section id="coursepage">
-      <div class="bgfon":style="{ 'background-image': 'url(' + course(id).img + ')' }">
-        <iframe
-          src="https://player.vimeo.com/video/460741059?loop=true&amp;byline=false&amp;controls=false&amp;fun=false&amp;muted=true&amp;portrait=false&amp;title=false&amp;autoplay=true&amp;transparent=true&amp;gesture=media"
-          allowtransparency
-          allow="autoplay"
-          class="bg-video__player"
-        ></iframe>
-      </div>
+    <section id="coursepage" v-if="!playLesson">
+
+      <Teaser :teaserCont="course(id)" />
 
       <div class="go-to-watch" v-if="purchaseId.includes(course(id).id)">
-        <button class="main-btn">
+        <button class="main-btn" @click="playLesson = !playLesson">
                 Перейти к просмотру
         </button>
       </div>
@@ -37,17 +31,14 @@
             <div class="col-lg-12" v-else>
               <p class="hidden-xs white-txt fsz-16" v-html="course(id).description"></p>
             </div>
-
-
           </div>
       </div>
-
 
     </section>
 
 
 <!-- mobile descr -->
-    <div class="hidden-lg hidden-sm hidden-md hidden-xl">
+    <div class="hidden-lg hidden-sm hidden-md hidden-xl" v-if="!playLesson">
       <div class="container-fluid">
         <div class="col-lg-12">
            <p class="white-txt fsz-16" v-html="course(id).description"></p>
@@ -56,12 +47,11 @@
     </div>
 <!-- mobile descr -->   
 
-<!-- 
-<section id="player">
-  <iframe :src=" course(id).video +  '?title=0&amp;byline=0&amp;portrait=0' " frameborder="0" allow="autoplay; fullscreen" allowfullscreen="allowfullscreen" class="vimeo__player"></iframe>
-</section>
- -->
 
+<videoPlayer :videoLink="course(id).videoSource" v-else/>
+
+
+<p class="hidden">{{checkpageId}}</p>
 
 
     <otsilki :flashbacks="course(id)" v-if="course(id).linkCourse" />
@@ -69,26 +59,39 @@
 </template>
 
 <script>
+import axios from 'axios'
 import otsilki from "../components/otsilki.vue";
 import { mapGetters, mapActions, mapState } from "vuex";
 import Buypop from '../components/ui/Buypop.vue';
+import Teaser from '../components/ui/Teaser.vue'
+import videoPlayer from '../components/ui/videoPlayer.vue'
 
 export default {
-  components: { otsilki, Buypop },
+  components: { otsilki, Buypop, Teaser, videoPlayer },
 
   props: ["id"],
   data(){
     return{
       logAlert: false,
-      chosenCourse: {}
+      chosenCourse: {},
+      playLesson: false
     }
-  },
+  }, 
   computed: {
     ...mapGetters({
       course: "courses/getSingleCourse",
       user: "login/getUser",
       purchaseId: "login/getPurchaseId"
     }),
+    videoStr(){
+      let id = this.$route.params.id
+         let first = this.course(id).video.substr(0, 27)
+         return first.substr(18, 27)
+    },
+    checkpageId(){
+      this.playLesson = false
+      return this.id
+    }
   },
   methods: {
     hidePop(){
@@ -106,37 +109,55 @@ export default {
         return
       }
 
-      var widget = new cp.CloudPayments();
+      let form = {
+          user: this.user.user_email,
+          cost: param.price,
+          course_id: param.id
+      }
 
-      widget.pay(
-        "auth",
-        {
-          publicId: "pk_1ca6aec798da797a3092eea9157f7",
-          description: "Покупка курса: «" + param.name + "»",
-          amount: parseInt(param.price),
-          currency: "RUB",
-          accountId: this.user.user_email,
-          skin: "mini",
-          data: {
-            myProp: "myProp value",
-          },
-        },
-        {
-          onSuccess: function (options) {
-            let form = {
-              user_id: this.user.id,
-              course_id: id,
-            };
-
-            this.BUY_COURSE(form).then(() => {
-              this.$router.replace("/lk");
-            });
-          },
-          onFail: function (reason, options) {},
-          onComplete: function (paymentResult, options) {},
-        }
-      );
+      this.goPay(form)
     },
+              goPay(form){
+                var widget = new cp.CloudPayments();
+                const vm = this;
+
+                widget.pay(
+                  "auth",
+                  {
+                    publicId: "pk_1ca6aec798da797a3092eea9157f7",
+                    description: "Покупка курса за " + form.cost + "₽",
+                    amount: parseInt(form.cost),
+                    currency: "RUB",
+                    accountId: form.user,
+                    skin: "mini",
+                    data: {
+                      myProp: "myProp value",
+                    },
+                  },
+                  {
+                    onSuccess: function (options) {
+
+                      let newOrder = {
+                        course_id: form.course_id,
+                        user_id: vm.user.id
+                      }
+
+                      // console.log(newOrder)
+                      
+                        axios
+                        .post('https://nikitapugachev.com/wp-json/np/v1/buy/lesson', newOrder)
+                        .then(res =>{
+                          console.log(res)
+                          vm.$router.replace("/lk");
+
+                        }).catch(error => alert(error))
+
+                    },
+                    onFail: function (reason, options) {},
+                    onComplete: function (paymentResult, options) {},
+                  }
+                );
+              }
   },
 };
 </script>
@@ -178,6 +199,14 @@ export default {
   bottom: -1px;
   background: linear-gradient(180deg, rgba(17, 17, 17, 0), #111);
   z-index: 1;
+}
+#player{
+  padding: 15px;
+  margin-top: 50px;
+}
+.vimeo__player{
+  width: 100%;
+  height: 90vh;
 }
 
 </style>

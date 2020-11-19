@@ -220,7 +220,7 @@ h1{
 	width: 100%;
 	margin-bottom: 15px;
 	border-radius: 10px;
-	background-image: url('https://nikitapugachev.com/wp-content/themes/np/assets/img/first-slider__img2-min.jpg');
+	background-color: #1A1A1A;
 	background-size: cover;
 	background-repeat: no-repeat;
 	background-position: center;
@@ -423,7 +423,6 @@ animation-duration: 1s;
 	height: calc(100vh - 122px);
 	padding-top: 122px;
 }
-
 #mylessons{
 	min-height: calc(100vh - 122px);
 	padding: 50px 0;
@@ -474,6 +473,8 @@ animation-duration: 1s;
 
 .filter{
 	display: flex;
+	position: relative;
+	z-index: 10;
 	justify-content: center;
 	align-items: center;
 	margin-bottom: 30px;
@@ -481,6 +482,9 @@ animation-duration: 1s;
     padding-left: 20px;
     margin-right: auto;
     margin-left: auto;
+}
+.filter::-webkit-scrollbar {
+  display: none;
 }
 .filter-btn{
 	font-size: 16px;
@@ -492,6 +496,7 @@ animation-duration: 1s;
 	background-color: transparent;
 	transition: all .3s ease-in-out;
 	cursor: pointer;
+	white-space: nowrap;
 	margin: 0 5px;
 }
 .actFilt{
@@ -514,13 +519,13 @@ animation-duration: 1s;
 	font-size: 16px;
 	padding: 19px 30px;
 	border-radius: 50px;
-	border: none;
+	border: 1px #fff solid;
 	background-color: #fff;
 	transition: all .3s ease;
 }
 .white-btn:hover{
-	/*box-shadow: 0px 2px 29px 12px rgba(46, 151, 230, 0.33);*/
-	box-shadow: 0px 2px 29px 12px rgba(255, 255, 255, 0.15);
+	background-color: transparent;
+	color: #fff;
 }
 
 
@@ -609,6 +614,8 @@ animation-duration: 1s;
 
 #questions {
 	padding:200px 0;
+	position: relative;
+	z-index: 5;
 }
 #questions h1{
 	margin-bottom: 100px;
@@ -674,6 +681,15 @@ animation-duration: 1s;
 
 
 
+#p404{
+	height: calc(100vh - 122px);
+	display: flex;
+	align-items: center;
+}
+#p404 .main-btn{
+	margin: 0 auto;
+}
+
 
 /*magicscroll*/
 
@@ -681,7 +697,7 @@ animation-duration: 1s;
 
 #fadetitles{
 		position: relative;
-		height: 550vh;
+		height: 500vh;
 	}
 	.fadebox1, .fadebox2, .fadebox3, .fadebox4, .fadebox5, .fadebox6{
 		width: 100%;
@@ -704,6 +720,92 @@ animation-duration: 1s;
 
 /*magicscroll*/
 
+
+/*player styles*/
+
+
+.vcp-dashboard{
+    background: #111111e6!important;
+    backdrop-filter: blur(2px);
+}
+.play-pause-layer .btn-control:before{
+    display: none!important;
+}
+.play-pause-layer .btn-control{
+    background-color: #2E97E6!important;
+}
+.btn-play svg path{
+    fill: #fff!important;
+}
+.btn-pause svg rect{
+    fill: #fff!important;
+}
+.vcp-progress-played{
+    background-color: #2E97E6!important;
+}
+.vcp-switch:after{
+    background-color: #2E97E6!important;
+}
+.h5-layer-loading svg stop{
+    stop-color: #2E97E6!important;
+}
+.error-icon circle{
+	fill: #2E97E6;
+}
+.volume-control .btn-control-panel .progress .volume-current{
+	background-color: #2E97E6!important;
+}
+
+
+.play-pause-layer{
+	opacity: .12!important;
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	background-size: 80%;
+}
+.fullscreen .play-pause-layer{
+	background-size: 80%;
+	background-repeat: no-repeat!important;
+	background-position: center!important;
+	opacity: .12;
+}
+
+.fullscreen .play-pause-layer .btn-control{
+	opacity: 0;
+}
+.vcp-m-dashboard .vcp-progress-hover .vcp-progress-played .thumb-drag{
+	background-color: #2E97E6!important;
+}
+.vcp-m-dashboard .vcp-progress-hover .vcp-progress-played .thumb-drag:before{
+	background-color: #2E97E6!important;
+	opacity: .25;
+}
+
+.btn-control-panel{
+	background-color: #111!important;
+}
+
+
+.core-sceemer{
+	position: relative;
+	height: 80vh;
+	margin-top: 57px;
+}
+.gflscreen{
+	position: absolute;
+	top: 10px;
+	right: 10px;
+	z-index: 100;
+}
+.vcp-layer.play-pause-layer .btn-play{
+	opacity: 0!important;
+}
+.vcp-layer.play-pause-layer .btn-pause{
+	opacity: 0!important;
+}
+
+
+/*player styles*/
 
 /*ADAPTIIIIIIIIIV*/
 
@@ -737,6 +839,16 @@ animation-duration: 1s;
 	display: block;
 	margin-right: 0;
 	}
+	.filter{
+		overflow-x: auto;
+    	-webkit-overflow-scrolling: touch;
+    	justify-content: left;
+    	padding-bottom: 10px;
+	}
+	.filter-btn{
+		margin: 5px;
+		white-space: nowrap;
+	}
 }
 @media (max-width: 786px) {
 	#mylessons{
@@ -750,6 +862,7 @@ animation-duration: 1s;
 @media (max-width: 672px) {
 	.anatation{
 		text-align: center;
+		    width: 100%;
 	}
 	.filter{
 		overflow-x: auto;
@@ -799,12 +912,6 @@ animation-duration: 1s;
 	.outZoom1{
 		opacity: 1!important;
 		transform: scale(1) translateY(0)!important;
-	}
-	#process{
-		padding:100px 0;
-	}
-	#more2{
-		padding: 100px 0;
 	}
 }
 @media (max-width: 512px) {
@@ -861,6 +968,33 @@ animation-duration: 1s;
 	#questions {
 		padding: 100px 0;
 	}
+	#process{
+		padding:100px 0!important;
+	}
+	#more2{
+		padding: 100px 0!important;
+	}
+	#chat{
+		padding:100px 0!important;
+	}
+	#short_white{
+		padding: 70px 0!important;
+	}
+	#misstakes{
+		padding:100px 0!important;
+	}
+	.vcp-layer.play-pause-layer .btn-play{
+	opacity: 1!important;
+	}
+	.vcp-layer.play-pause-layer .btn-pause{
+		opacity: 1!important;
+	}
+	.play-pause-layer{
+		opacity: 1!important;
+	}
+	.core-sceemer{
+		height: inherit;
+	}
 }
 @media (max-width: 390px) {
 	
@@ -868,6 +1002,9 @@ animation-duration: 1s;
 @media (max-width: 320px) {
 
 }
+
+
+
 
 
 
@@ -917,4 +1054,7 @@ input[type="text"]{
 input[type="password"]{
 	font-size: 16px!important;
 }
+
+
+
 

@@ -1,14 +1,14 @@
 <template>
 	<section id="process">
 		<div class="container-fluid">
-			<div class="col-lg-5">
+			<div class="col-lg-6 col-lg-push-6 wow fadeInRight">
+				<img src="https://nikitapugachev.com/wp-content/uploads/2020/11/framecourse.svg" class="uiux_nick">
+			</div>
+			<div class="col-lg-6 col-lg-pull-6">
 				<h1>Процесс обучения</h1>
 				<p class="black-txt">
 				Наша платформа работает на всех устройствах, изучай короткие уроки и применяй на практике или погружайся с головой в полноценные курсы, практикуй полученные знания, получай обратную связь и набирайся опыта!</p>
-				<router-link tag="button" to="/courses" class="show-more">Перенять опыт</router-link>
-			</div>
-			<div class="col-lg-7 wow fadeInRight">
-				<img src="https://nikitapugachev.com/wp-content/uploads/2020/11/uiux_nick.png" class="uiux_nick">
+				<router-link tag="button" to="/signup" class="show-more">Перенять опыт</router-link>
 			</div>
 		</div>
 	</section>

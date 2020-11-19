@@ -26,7 +26,7 @@
 
 				.setTween('.floatdiv', { 
 			      css: { 
-			        transform: 'translateY(300px) scale(.8)',
+			        transform: 'scale(.8)',
 			        opacity: '0'
 			      }
 			    })
