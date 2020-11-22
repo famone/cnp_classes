@@ -37,12 +37,6 @@ font-weight: 700;
 	z-index: 100;
 	padding: 0 5px;
 }
-.fixedH{
-	position: fixed;
-	top: 0;
-	left: 0;
-	width: 100%;
-}
 .transp{
 	background-color: transparent!important;
     position: absolute;
@@ -50,6 +44,13 @@ font-weight: 700;
     top: 0;
     left: 0;
     z-index: 100;
+}
+.fixedH{
+	position: fixed!important;
+	top: 0!important;
+	left: 0!important;
+	width: 100%!important;
+	background-color: #1A1A1A!important;
 }
 .shapka{
 	padding: 10px 0;
@@ -656,13 +657,13 @@ animation-duration: 1s;
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	overflow: hidden;
+	overflow: hidden!important;
 	border-radius: 10px;
 	padding:160px 30px 80px 30px;
 	margin-bottom: 20px;
 	position: relative;
 }
-.less-box:before{
+/*.less-box:before{
 	background: linear-gradient(90deg, #000000 0%, rgba(0, 0, 0, 0) 30%);
 	height: 100%;
 	width: 100%;
@@ -671,7 +672,7 @@ animation-duration: 1s;
 	left: 0;
 	top: 0;
 	z-index: 1;
-}
+}*/
 .less-cont{
 	position: relative;
 	z-index: 2;
@@ -859,7 +860,7 @@ animation-duration: 1s;
 
 
 .play-pause-layer{
-	opacity: .12!important;
+	opacity: 0;
 	background-repeat: no-repeat!important;
 	background-position: center!important;
 	background-size: 80%!important;
@@ -904,6 +905,8 @@ animation-duration: 1s;
 	position: relative;
 	height: 80vh;
 	margin-top: 57px;
+	margin-right: 15px;
+	margin-left: 15px; 
 }
 .gflscreen{
 	position: absolute;
@@ -941,7 +944,16 @@ animation-duration: 1s;
 .settings-control .btn-control-panel{
 	min-height: 70px!important;
 }
+.vcp-progress-played .thumb-drag{
+	opacity: 1!important;
+}
 
+.vcp-m-dashboard .settings-control .btn-control-panel{
+	margin: 15px;
+    box-shadow: 0px 4px 16px rgba(0, 0, 0, 0.25);
+    top: 266px!important;
+    max-height: 160px;
+}
 
 /*player styles*/
 
@@ -1001,6 +1013,12 @@ animation-duration: 1s;
 	.core-sceemer{
 		height: inherit;
 	}
+	.setting-control .vue-core-video-player-control:nth-child(2){
+		display: inline-block;
+	}
+	.setting-control .vue-core-video-player-control:nth-child(1){
+		display: none;
+	}
 }
 @media (max-width: 786px) {
 	#mylessons{
@@ -1009,6 +1027,12 @@ animation-duration: 1s;
 	}
 	.core-sceemer{
 		height: inherit;
+	}
+	.setting-control .vue-core-video-player-control:nth-child(2){
+		display: inline-block;
+	}
+	.setting-control .vue-core-video-player-control:nth-child(1){
+		display: none;
 	}
 }
 @media (max-width: 767px) {
@@ -1019,10 +1043,19 @@ animation-duration: 1s;
  	.filter{
     	justify-content: center;
 	}
+	.setting-control .vue-core-video-player-control:nth-child(2){
+		display: inline-block;
+	}
+	.setting-control .vue-core-video-player-control:nth-child(1){
+		display: none;
+	}
 }
 @media (max-width: 672px) {
 	.setting-control .vue-core-video-player-control:nth-child(2){
 		display: inline-block;
+	}
+	.setting-control .vue-core-video-player-control:nth-child(1){
+		display: none;
 	}
 	.anatation{
 		text-align: center;
@@ -1033,6 +1066,7 @@ animation-duration: 1s;
     	-webkit-overflow-scrolling: touch;
     	justify-content: left;
     	padding-bottom: 10px;
+    	margin-bottom: 0;
 	}
 	.filter-btn{
 		margin: 5px;
@@ -1154,7 +1188,7 @@ animation-duration: 1s;
 		opacity: 1!important;
 	}
 	.play-pause-layer{
-		opacity: 1!important;
+		opacity: .3!important;
 	}
 	.core-sceemer{
 		height: inherit;

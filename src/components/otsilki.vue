@@ -13,7 +13,6 @@
         <router-link
           tag="div"
           v-for="flash in flashbacks.linkCourse"
-          :key="flash.id"
           :to="'/courses/' + flash.id"
           class="col-lg-3 course-box">
           <div

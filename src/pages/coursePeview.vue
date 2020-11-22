@@ -77,6 +77,9 @@ export default {
       playLesson: false
     }
   }, 
+  crated(){
+    console.log(this.course(id))
+  },
   computed: {
     ...mapGetters({
       course: "courses/getSingleCourse",

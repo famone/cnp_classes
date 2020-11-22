@@ -5,7 +5,7 @@
 
 	<section id="mylessons" v-if="courses">
 			<div class="container-fluid">
-				<div class="rowsd devider">
+				<div class="row devider">
 					<courseBox v-for="course in filteredCourses.slice(0, coursesMobile)" :course="course" />
 				</div>
 				<!-- show more -->
@@ -34,7 +34,7 @@ import FilterBox from '../components/ui/FilterBox.vue'
 		data(){
 			return{
 				filteredParam: 'Все категории',
-				baseVisible: 12,
+				baseVisible: 8,
 				hideMore: false,
 				savedScroll: 0
 			}
@@ -65,12 +65,13 @@ import FilterBox from '../components/ui/FilterBox.vue'
 
 				this.savedScroll = winScroll
 			})
+
 		},
 		methods: {
 			getFilter(param){
 				this.hideMore = false
 				this.filteredParam = param;
-				this.baseVisible = 12
+				this.baseVisible = 8
 
 				if(this.filteredCourses.length <= 8){
 					this.hideMore = true
