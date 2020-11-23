@@ -40,7 +40,7 @@
 
 			 const scene2 = this.$scrollmagic.scene({
 				triggerElement: '#scene2',
-			    triggerHook: 0,
+			    triggerHook: 0.5,
 			    duration: "100%",
 			}).setTween(tween2)
 		    this.$scrollmagic.addScene(scene2) 

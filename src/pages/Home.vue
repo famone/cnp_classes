@@ -4,6 +4,17 @@
     <!-- <Mainslider :courses="courses" v-if="courses" /> -->
     <FirstScreen />
     <Fadetitles />
+
+    <section id="mobileFadeTitles" class="hidden-lg hidden-md hidden-sm">
+      <div class="container-fluid text-center">
+        <h2>Короткие уроки</h2>
+         <h2>Полноценнные курсы</h2>
+          <h2>Лучший старт для новичков</h2>
+           <h2>Полезно для профи</h2>
+            <h2>Новый контент каждый месяц</h2>
+      </div>
+    </section>
+
     <Mainvideo />
 
 

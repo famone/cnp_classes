@@ -5,7 +5,7 @@
 
 			<div class="col-lg-5 col-lg-offset-1 wow fadeInUp chat-box">
 				<!-- chat1 -->
-				<div class="chat1 wow fadeInUp" data-wow-delay=".4s">
+				<div class="chat1 wow fadeInUp">
 					<img src="../../assets/img/ava2.png" >
 					<div class="chat-txt">
 						<h4>Ася Милитова</h4>
@@ -13,7 +13,7 @@
 					</div>
 				</div>
 					<!-- chat2 -->
-				<div class="chat2 wow fadeInUp" data-wow-delay="1s">
+				<div class="chat2 wow fadeInUp>
 					<div class="chat-txt">
 						<h4>Никита Пугачев</h4>
 						<p class="white-txt">Попробуй поставить прибор с рисующим светом ближе, а под ним флаг что-бы лишний свет не засвечивал фон. С обратной стороны обязательно должен быть отражатель, чтобы подсветить темную сторону! И чуть купнее, а то много пустого места... 😃</p>
@@ -21,7 +21,7 @@
 					<img src="../../assets/img/ava1.png" >
 				</div>
 				<!-- chat3 -->
-				<div class="chat3 wow fadeInUp" data-wow-delay="1.6s">
+				<div class="chat3 wow fadeInUp" >
 					<img src="../../assets/img/ava2.png" >
 					<div class="chat-img-box"> 
 						<img src="../../assets/img/herimg.png">

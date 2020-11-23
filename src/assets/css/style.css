@@ -288,6 +288,7 @@ h1{
 	color: #fff;
 	margin-bottom: 30px;
 	font-weight: 700;
+	margin-top: 0;
 }
 .big-white{
 	font-size: 24px;
@@ -573,7 +574,7 @@ animation-duration: 1s;
 	z-index: 10;
 	justify-content: center;
 	align-items: center;
-	margin-bottom: 30px;
+	/*margin-bottom: 30px;*/
 	padding-right: 20px;
     padding-left: 20px;
     margin-right: auto;
@@ -813,7 +814,7 @@ animation-duration: 1s;
 		color: #2E97E5;
 		text-align: center;
 		margin: 0;
-		top: calc(50% - 35px);
+		top: calc(50% - 70px);
 		position: fixed;
 		/*transform: translateY(200px);*/
 		opacity: 1;
@@ -905,8 +906,6 @@ animation-duration: 1s;
 	position: relative;
 	height: 80vh;
 	margin-top: 57px;
-	margin-right: 15px;
-	margin-left: 15px; 
 }
 .gflscreen{
 	position: absolute;
@@ -1199,6 +1198,13 @@ animation-duration: 1s;
 	}
 	.main-logo{
 		height: 33px;
+	}
+	#mobileFadeTitles{
+		padding-top: 90px;
+	}
+	#mobileFadeTitles h2{
+		color: #2E97E6!important;
+		margin-bottom: 30px!important;
 	}
 }
 @media (max-width: 390px) {

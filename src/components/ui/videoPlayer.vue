@@ -1,9 +1,9 @@
 <template>
 	<div class="core-sceemer">
 		<div class="watermark"></div>
-        <button class="shapka-btn gflscreen  hidden-md hidden-lg" @click="showFsc">
+  <!--       <button class="shapka-btn gflscreen  hidden-md hidden-lg" @click="showFsc">
           <span class="mdi mdi-arrow-expand"></span>
-        </button>
+        </button> -->
         <vue-core-video-player
         :src="videoLink" 
         :controls="true" 
