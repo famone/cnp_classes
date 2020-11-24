@@ -280,7 +280,7 @@ h3{
 
 /*inner*/
 #inner{
-	padding: 150px 0;
+	padding: 140px 0;
 	background: radial-gradient(50% 50% at 50% 50%, #1C1C1C 0%, #111111 78.2%);
 }
 h1{
@@ -859,6 +859,9 @@ animation-duration: 1s;
 	background-color: #2E97E6!important;
 }
 
+.volume-control .btn-control-panel .progress .volume-current .thumb-drag{
+	opacity: 1!important;
+}
 
 .play-pause-layer{
 	opacity: 0;
@@ -1269,3 +1272,13 @@ input[type="password"]{
 
 
 
+
+.volume-control .btn-control-panel .progress{
+	overflow: inherit!important;
+}
+.volume-control .btn-control-panel .progress .volume-current .thumb-drag{
+	opacity: 1!important;
+}
+.volume-control .btn-control-panel .progress:hover{
+	overflow: visible!important;
+}

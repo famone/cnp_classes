@@ -1,9 +1,15 @@
 <template>
 	<section id="mylessons">
 		<div class="container-fluid">
-			<div class="col-lg-12">
-				<h2>Мои уроки</h2>
-				 <p class="grey-txt" v-if="purchase === '' ">У вас нет еще ни одной покупки</p>
+			<div class="row">
+				
+				<div class="col-lg-12">
+					<h2>Мои уроки</h2>
+				</div>
+				<div class="col-lg-12">
+					<p class="grey-txt" v-if="purchase === '' ">У вас нет еще ни одной покупки</p>
+				</div>
+				 
 				<courseBox v-for="course in purchase" :course="course"/> 
 			</div>
 

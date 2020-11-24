@@ -50,6 +50,9 @@ import { mapGetters } from "vuex";
 		mounted(){
 			let fscren = document.querySelector('.play-pause-layer')
 			let watmark = document.querySelector('.watermark')
+
+			prgrs.style.overflow = 'inherit!important'
+
 			fscren.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
 			watmark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
 
@@ -95,5 +98,14 @@ import { mapGetters } from "vuex";
 		background-position: center!important;
 		background-size: 70%!important;
 		background-color: none!important;
+	}
+	.volume-control .btn-control-panel .progress{
+		overflow: inherit!important;
+	}
+	.volume-control .btn-control-panel .progress .volume-current .thumb-drag{
+		opacity: 1!important;
+	}
+	.volume-control .btn-control-panel .progress:hover{
+		overflow: visible!important;
 	}
 </style>
