@@ -233,7 +233,7 @@ h3{
 
 
 .mob-menu{
-	z-index: 99;
+	z-index: 2009;
 	position: fixed;
 	height: calc(100% - 53px);
 	background-color: #111;
@@ -642,6 +642,10 @@ animation-duration: 1s;
 	color: #fff;
 }
 
+#firstScreen img{
+	margin-bottom: 30px;
+}
+
 
 
 /*lessons*/
@@ -874,7 +878,7 @@ animation-duration: 1s;
 	background-size: 80%!important;
 	background-repeat: no-repeat!important;
 	background-position: center!important;
-	opacity: .12;
+	opacity: 1;
 	background-color: none!important;
 }
 
@@ -1190,7 +1194,7 @@ animation-duration: 1s;
 		opacity: 1!important;
 	}
 	.play-pause-layer{
-		opacity: .3!important;
+		opacity: 1!important;
 	}
 	.core-sceemer{
 		height: inherit;

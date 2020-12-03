@@ -1,6 +1,6 @@
 <template>
 	<div class="core-sceemer">
-		<div class="watermark"></div>
+		<!-- <div class="watermark"></div> -->
   <!--       <button class="shapka-btn gflscreen  hidden-md hidden-lg" @click="showFsc">
           <span class="mdi mdi-arrow-expand"></span>
         </button> -->
@@ -50,11 +50,16 @@ import { mapGetters } from "vuex";
 		mounted(){
 			let fscren = document.querySelector('.play-pause-layer')
 			let watmark = document.querySelector('.watermark')
+			let vcpContainer = document.querySelector('.vcp-container')
+			let fsWatmark = document.createElement('div');
 
-			prgrs.style.overflow = 'inherit!important'
+			 fsWatmark.className = "redmark";
+			 vcpContainer.prepend(fsWatmark)
 
-			fscren.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
-			watmark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
+
+			// fscren.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
+			// watmark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
+			fsWatmark.style.background = "url('http://nikitapugachev.com/text.php?email=" + this.user.user_email + "')"
 
 			document.querySelector('.play-pause-layer').addEventListener('click', ()=>{
 				const vid = document.querySelector('.vcp-container video')
@@ -66,7 +71,7 @@ import { mapGetters } from "vuex";
 					this.videoPLayed = false;
 				}
 			});
-			document.querySelector('.watermark').addEventListener('click', ()=>{
+			fsWatmark.addEventListener('click', ()=>{
 				const vid = document.querySelector('.vcp-container video')
 				if(this.videoPLayed == false){
 					vid.play();
@@ -88,7 +93,6 @@ import { mapGetters } from "vuex";
 		position: absolute;
 		top:calc(50% - 15%);
 		left: 0;
-		background-color: red;
 		opacity: .2;
 		content: '';
 		width: 100%;
@@ -99,7 +103,7 @@ import { mapGetters } from "vuex";
 		background-size: 70%!important;
 		background-color: none!important;
 	}
-	.volume-control .btn-control-panel .progress{
+/*	.volume-control .btn-control-panel .progress{
 		overflow: inherit!important;
 	}
 	.volume-control .btn-control-panel .progress .volume-current .thumb-drag{
@@ -107,5 +111,19 @@ import { mapGetters } from "vuex";
 	}
 	.volume-control .btn-control-panel .progress:hover{
 		overflow: visible!important;
+	}*/
+	.redmark{
+		position: absolute;
+		top:calc(50% - 15%);
+		left: 0;
+		opacity: .2;
+		content: '';
+		width: 100%;
+		height: 30%;
+		z-index: 2;
+		background-repeat: no-repeat!important;
+		background-position: center!important;
+		background-size: 70%!important;
+		background-color: none!important;
 	}
 </style>

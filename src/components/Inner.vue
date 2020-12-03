@@ -20,3 +20,9 @@
 		}
 	}
 </script>
+
+<style>
+	#inner .container{
+		max-width: 900px;
+	}
+</style>

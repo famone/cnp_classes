@@ -3,7 +3,7 @@
 		<div class="container-fluid text-center outZoom1">
 			<h1 class="super-big" style="color: #262626;">Обучающие курсы</h1>
 			<p class="black-txt">
-				Курсы позволяют в сжатые сроки освоить новый навык и сразу же <br> начать применять полученные знания на практике.
+				Домашние задания, обратная связь и разбор <br> полученного результата, все это тебя ждет на наших<br> онлайн-курсах, выбирай интересную тему!
 			</p>
 			<router-link tag="button" to="/lessons" class="trans-btn">Смотреть все курсы</router-link>
 		</div>

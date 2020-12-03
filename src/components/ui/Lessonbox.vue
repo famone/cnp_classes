@@ -5,7 +5,7 @@
 				<p class="white-txt big-white">{{less.date}}</p>
 				<h1>{{less.title}}</h1>
 				<p class="white-txt big-white">{{less.miniDescr}}</p>
-				<a href="https://nikitapugachev.com/">
+				<a href="https://nikitapugachev.com/" target="blank_">
 					<button class="show-more">Перейти</button>
 				</a>
 			</div>
