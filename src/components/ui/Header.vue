@@ -5,7 +5,7 @@
             <div class="shapka">
             	<div class="log-row">
             		<router-link to="/" tag="a" class="header__logo">
-	            		<img src="https://nikitapugachev.com/wp-content/themes/np/assets/img/Logo.svg" class="main-logo">
+	            		<img src="https://nikitapugachev.ru/wp-content/themes/np/assets/img/Logo.svg" class="main-logo">
 	            	</router-link>
 	            	<div class="navs hidden-xs ">
 	            		<router-link tag="a" to="/courses" class="head-link">Уроки</router-link>

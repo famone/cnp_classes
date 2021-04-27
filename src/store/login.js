@@ -44,7 +44,7 @@ const login = {
 	actions: {
        async AUTH_REQUEST({ commit, dispatch }, payload) {
             try {
-                const { data } = await axios.post(`https://nikitapugachev.com/wp-json/jwt-auth/v1/token`, payload)
+                const { data } = await axios.post(`https://nikitapugachev.ru/wp-json/jwt-auth/v1/token`, payload)
                 return dispatch('VALIDATE', data)
             }
             catch (err) {
@@ -64,7 +64,7 @@ const login = {
 
             try {
                 const response = await axios({
-                    url: `https://nikitapugachev.com/wp-json/jwt-auth/v1/token/validate`,
+                    url: `https://nikitapugachev.ru/wp-json/jwt-auth/v1/token/validate`,
                     method: 'post',
                     headers: {
                         'Authorization': `Bearer ${user.token}`
@@ -89,7 +89,7 @@ const login = {
         },
         async GET_BOUGHTS({commit}, payload){
             try{
-                const {data} = await axios.get('https://nikitapugachev.com/wp-json/np/v1/get/courses?user_id=' + payload)
+                const {data} = await axios.get('https://nikitapugachev.ru/wp-json/np/v1/get/courses?user_id=' + payload)
                     return commit('SET_BOUGHTS', data)
             }
             catch(err){

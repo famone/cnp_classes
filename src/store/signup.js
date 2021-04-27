@@ -20,7 +20,7 @@ const signup = {
         async SIGN_UP({commit}, payload){
             
             try {
-                const { data } = await axios.post(`https://nikitapugachev.com/wp-json/np/v1/add/user`, payload)
+                const { data } = await axios.post(`https://nikitapugachev.ru/wp-json/np/v1/add/user`, payload)
                 
                 if(data.status === 'Вы уже зарегистрированы'){
                 	console.log(data.status)

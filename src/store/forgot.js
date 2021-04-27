@@ -15,7 +15,7 @@ const forgot = {
         async REMEMBER_PASS({commit}, payload){
             
             try {
-                const { data } = await axios.get(`https://nikitapugachev.com/wp-json/np/v1/forgot/user?email=${payload}`)
+                const { data } = await axios.get(`https://nikitapugachev.ru/wp-json/np/v1/forgot/user?email=${payload}`)
                 console.log(data)   
                 return commit('SENT_ON_MAIL', data)       
             }

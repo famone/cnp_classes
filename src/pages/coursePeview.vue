@@ -148,7 +148,7 @@ export default {
                       // console.log(newOrder)
                       
                         axios
-                        .post('https://nikitapugachev.com/wp-json/np/v1/buy/lesson', newOrder)
+                        .post('https://nikitapugachev.ru/wp-json/np/v1/buy/lesson', newOrder)
                         .then(res =>{
                           console.log(res)
                           vm.$router.replace("/lk");

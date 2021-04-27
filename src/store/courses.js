@@ -19,7 +19,7 @@ const courses = {
 	actions: {
        async LOAD_COURSES({commit}){
 	       	try{
-	       		const {data} = await axios.get('https://nikitapugachev.com/wp-json/np/v1/get/courses')
+	       		const {data} = await axios.get('https://nikitapugachev.ru/wp-json/np/v1/get/courses')
 	       		console.log(data)
 	       		return commit('SET_COURSES', data)
 	       	}
@@ -29,7 +29,7 @@ const courses = {
        },
        async BUY_COURSE({commit}, payload){
 	       	try{
-	       		const {data} = await axios.post('https://nikitapugachev.com/wp-json/np/v1/buy/course', payload)
+	       		const {data} = await axios.post('https://nikitapugachev.ru/wp-json/np/v1/buy/course', payload)
 	       		return commit('SET_PAYMENT', data)
 	       	}
 	       	catch(err){
